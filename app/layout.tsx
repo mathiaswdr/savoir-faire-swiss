@@ -1,28 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"
 import Nav from "@/components/navigation/nav";
+import Footer from "@/components/footer";
 import { Toaster } from "sonner";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-ibm-plex-mono",
 });
 
 export const metadata: Metadata = {
-  title: "Your website",
+  title: "Savoir Faire Swiss",
   description: "this is the website description",
   openGraph: {
     type: "website",
     url: "https://mywebsitemwrdev.vercel.app",
-    title: "Your website 💽",
+    title: "Savoir Faire Swiss",
     description: "this is the website description",
     // images: [
     //   {
@@ -50,12 +46,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col items-center justify-center`}
+        className={`${ibmPlexMono.className} antialiased`}
       >
-        <main className="w-full max-w-screen-xl">
-          <Nav />
-          {children}
-        </main>
+        <Nav />
+        {children}
+        <Footer />
 
         <Toaster />
         <Analytics />

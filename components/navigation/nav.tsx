@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import MobileDropdown from "../ui/mobile-dropdown";
+import Logo from "../logo";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,10 +47,11 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="w-full h-20 flex items-center justify-between px-8 border-b">
-      <div className="flex items-center justify-between gap-x-8 w-full">
-        <h1 className="text-2xl font-bold">Logo</h1>
-        <div className="md:flex hidden items-center gap-x-6">
+    <nav className="fixed top-0 left-0 w-screen bg-clearBlue h-32 flex items-center justify-center px-8 border-b z-50">
+      <div className="flex items-end justify-between gap-x-8 w-full max-w-screen-xl">
+         {/* <h1 className="text-2xl font-bold">Logo</h1> */}
+        <Logo />
+        <div className="md:flex hidden items-center gap-x-6 font-switzer font-semibold uppercase">
           <a href="/" className="text-lg hover:text-gray-600 globalHover">Accueil</a>
           <a href="/about" className="text-lg hover:text-gray-600 globalHover">À propos</a>
           
@@ -57,7 +59,7 @@ export default function Nav() {
           <div className="relative" ref={dropdownRef}>
             <button 
               onClick={toggleDropdown}
-              className="flex items-center text-lg hover:text-gray-600 globalHover gap-x-1"
+              className="flex items-center text-lg hover:text-gray-600 globalHover gap-x-1 uppercase"
             >
               Services
               <motion.svg
@@ -124,7 +126,7 @@ export default function Nav() {
         initial={{x: "-100%"}}
         animate={isOpen ? {x: 0} : {x: "-100%"}}
         transition={{type: "spring", stiffness: 300, damping: 30}}
-        className="flex md:hidden fixed top-20 left-0 w-full px-8 h-screen bg-white flex-col items-start gap-y-6 pt-12"
+        className="flex md:hidden fixed top-32 left-0 w-full px-8 h-screen bg-white flex-col items-start gap-y-6 pt-12"
       >
         <a href="/" className="text-xl hover:text-gray-600 globalHover">Accueil</a>
         <a href="/about" className="text-xl hover:text-gray-600 globalHover">À propos</a>

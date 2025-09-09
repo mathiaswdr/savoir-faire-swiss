@@ -1,10 +1,17 @@
-import Image from "next/image";
+import About from "@/components/home/about";
+import HeroSection from "@/components/home/hero-section";
+import Services from "@/components/home/services";
+import ShowWork from "@/components/home/show-work";
+import Contact from "@/components/home/contact";
 
 export default function Home() {
   return (
-    <main className="mainPageSection flex-col gap-y-6">
-      <h1 className="text-7xl font-semibold">Basic Next</h1>
-      <h3 className="text-xl font-medium">Next js 15.1.6 + Tailwind CSS + shadcn/ui + motion</h3>
+    <main className="flex flex-col items-center justify-start min-h-screen w-full pt-32">
+      <HeroSection />
+      <About/>
+      <Services/>
+      <ShowWork/>
+      <Contact/>
     </main>
   );
 }

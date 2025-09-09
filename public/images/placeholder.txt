@@ -1,0 +1,6 @@
+Ajouter vos images de construction ici:
+- construction-1.jpg
+- construction-2.jpg
+- construction-3.jpg
+
+Ces images seront utilisées pour le carrousel de la page d'accueil.

@@ -13,8 +13,12 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			'switzer': ['Switzer', 'sans-serif'],
+		},
 		spacing: {
 			largeScreen: '3em',
+			bigScreen: '1900px',
 			biggerScreen: '25%',
 			mobileScreen: '1em',
 			paddingTopNav: '6rem',
@@ -37,6 +41,11 @@ export default {
 			// => @media (max-width: 639px) { ... }
 		  },
   		colors: {
+			clearBlue: '#B8D8D8',
+			darkBlue: '#7D9395',
+			mainRed: '#EC6B60',
+			mainYellow: '#EDF4DB',
+			lightGray: '#4F6367',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
