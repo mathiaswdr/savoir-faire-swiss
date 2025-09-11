@@ -6,22 +6,43 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { useRouter, usePathname } from "next/navigation";
 import { scrollToSection } from "@/utils/tools";
 import Logo from "./logo";
+import { toast } from "sonner";
 
 export default function Footer() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleDevisClick = () => {
+  const handleNavigationClick = (sectionId: string) => {
+    if (sectionId === '/') {
+      // Pour l'accueil, juste naviguer
+      router.push('/');
+      return;
+    }
+
     if (pathname === '/') {
       // Si on est sur la page d'accueil, scroll directement
-      scrollToSection('contact', -250);
+      scrollToSection(sectionId, -250);
     } else {
       // Si on est sur une autre page, naviguer vers l'accueil puis scroll
       router.push('/');
-      // Attendre que la navigation soit terminée avant de scroller
       setTimeout(() => {
-        scrollToSection('contact', -250);
+        scrollToSection(sectionId, -250);
       }, 1000);
+    }
+  };
+
+  const handleDevisClick = () => {
+    handleNavigationClick('contact');
+  };
+
+  const handleEmailClick = async () => {
+    const email = "info@savoirfaireswiss.com";
+    try {
+      await navigator.clipboard.writeText(email);
+      toast.success("Email copié dans le presse-papier !");
+    } catch (err) {
+      console.error('Failed to copy email: ', err);
+      toast.error("Erreur lors de la copie de l'email");
     }
   };
 
@@ -106,34 +127,34 @@ export default function Footer() {
               <h3 className="text-lg sm:text-xl font-switzer font-semibold">Navigation</h3>
               <ul className="space-y-2 sm:space-y-3">
                 <li>
-                  <Link href="/" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                  <button onClick={() => handleNavigationClick('/')} className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group text-left">
                     <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
                     Accueil
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link href="/a-propos" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                  <button onClick={() => handleNavigationClick('a-propos')} className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group text-left">
                     <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
                     À propos
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link href="/nos-services" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                  <button onClick={() => handleNavigationClick('nos-services')} className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group text-left">
                     <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
                     Nos services
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link href="/realisations" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                  <button onClick={() => handleNavigationClick('nos-realisations')} className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group text-left">
                     <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
                     Réalisations
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                  <button onClick={() => handleNavigationClick('contact')} className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group text-left">
                     <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
                     Contact
-                  </Link>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -161,12 +182,12 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center space-x-3 justify-start">
                   <Mail className="w-5 h-5 text-mainYellow flex-shrink-0" />
-                  <a 
-                    href="mailto:info@savoirfaireswiss.com" 
-                    className="text-mainYellow hover:text-clearBlue transition-colors duration-300"
+                  <button 
+                    onClick={handleEmailClick}
+                    className="text-mainYellow hover:text-clearBlue transition-colors duration-300 text-left"
                   >
                     info@savoirfaireswiss.com
-                  </a>
+                  </button>
                 </div>
               </div>
 
@@ -184,6 +205,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700">
