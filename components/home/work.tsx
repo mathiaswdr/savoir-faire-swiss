@@ -47,7 +47,7 @@ export default function Work(props: WorkProps) {
                     <h3 className="text-3xl font-semibold uppercase">Après</h3>
                 </div>
             </div>
-            <div className="w-full bg-clearBlue flex flex-col gap-y-1 p-5 mt-2 relative">
+            <div className="w-full bg-clearBlue rounded-lg flex flex-col gap-y-1 p-5 mt-3 relative">
                 <div className="flex gap-x-4 items-center">
                     <span className="font-semibold">Lieu: </span>
                     <span>{location}</span>

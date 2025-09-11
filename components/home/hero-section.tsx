@@ -32,7 +32,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-screen h-[75dvh] -ml-[calc((100vw-100%)/2)]">
+    <section className="relative w-screen h-[620px] sm:h-[450px] lg:h-[75dvh] -ml-[calc((100vw-100%)/2)]">
       {/* Carousel Background */}
       <div className="absolute inset-0 w-full h-full">
         {carouselImages.map((image, index) => (
