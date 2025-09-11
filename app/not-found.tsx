@@ -1,3 +1,5 @@
+
+
 import Link from 'next/link'
 import { ArrowLeft, Home } from 'lucide-react'
 
@@ -30,13 +32,13 @@ export default function NotFound() {
             Retour à l'accueil
           </Link>
           
-          <button
+          {/* <button
             onClick={() => window.history.back()}
             className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-darkGray text-darkGray font-semibold rounded-lg hover:bg-darkGray hover:text-white transition-all duration-300 group"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Page précédente
-          </button>
+          </button> */}
         </div>
 
         {/* Additional Help */}
