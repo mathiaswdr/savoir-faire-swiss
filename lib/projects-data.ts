@@ -53,25 +53,16 @@ export const projects: Project[] = [
     works: ["Rénovation", "Peinture", "Plomberie", "Électricité"],
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
+        url: "https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg",
         alt: "Vue d'ensemble de la nouvelle cuisine",
         caption: "Vue d'ensemble de la nouvelle cuisine avec l'îlot central"
       },
       {
-        url: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
+        url: "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg",
         alt: "Détail des finitions",
         caption: "Détail des finitions et de l'éclairage intégré"
       },
-      {
-        url: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
-        alt: "Rangements optimisés",
-        caption: "Solutions de rangement sur-mesure"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
-        alt: "Éclairage moderne",
-        caption: "Éclairage LED moderne et fonctionnel"
-      }
+
     ],
     testimonial: {
       text: "Nous sommes ravis du résultat ! L'équipe de Savoir Faire Swiss a su transformer notre ancienne cuisine en un espace moderne et fonctionnel. Le travail est impeccable et les délais ont été respectés.",
