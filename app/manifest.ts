@@ -14,24 +14,24 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: 'fr-CH',
     dir: 'ltr',
     scope: '/',
-    icons: [
-      {
-        src: '/icon-192.png',
-        sizes: '192x192',
-        type: 'image/png',
-        purpose: 'maskable any'
-      },
-      {
-        src: '/icon-512.png',
-        sizes: '512x512',
-        type: 'image/png',
-        purpose: 'maskable any'
-      },
-      {
-        src: '/apple-touch-icon.png',
-        sizes: '180x180',
-        type: 'image/png'
-      }
-    ],
+    // icons: [
+    //   {
+    //     src: '/icon-192.png',
+    //     sizes: '192x192',
+    //     type: 'image/png',
+    //     purpose: 'maskable any'
+    //   },
+    //   {
+    //     src: '/icon-512.png',
+    //     sizes: '512x512',
+    //     type: 'image/png',
+    //     purpose: 'maskable any'
+    //   },
+    //   {
+    //     src: '/apple-touch-icon.png',
+    //     sizes: '180x180',
+    //     type: 'image/png'
+    //   }
+    // ],
   }
 }
