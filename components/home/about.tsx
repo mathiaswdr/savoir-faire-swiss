@@ -18,7 +18,7 @@ export default function About() {
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <motion.div 
-                className="flex flex-col gap-y-4 lg:w-1/2"
+                className="flex flex-col gap-y-4 lg:w-2/3"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -53,7 +53,7 @@ export default function About() {
             </motion.div>
 
             <motion.div 
-                className="flex flex-col gap-y-4 items-stretch sm:items-center lg:items-end"
+                className="flex flex-col gap-y-4 items-stretch sm:items-center lg:items-center lg:w-1/3"
                 // initial={{ opacity: 0, x: 50 }}
                 // whileInView={{ opacity: 1, x: 0 }}
                 // viewport={{ once: true }}
