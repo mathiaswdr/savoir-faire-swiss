@@ -99,7 +99,9 @@ export default function Nav() {
       <div className="flex items-end justify-between gap-x-8 w-full max-w-screen-xl">
          {/* <h1 className="text-2xl font-bold">Logo</h1> */}
         {/* <div className="w-[180px] sm:w-[270px]"> */}
+        <Link href={"/"} onClick={() => setIsOpen(false)}>
           <Logo color="#2f2912" style="!w-[220px] sm:!w-[200px] lg:!w-[270px]"/>
+        </Link>
         {/* </div> */}
         <div className="md:flex hidden items-center gap-x-6 font-switzer font-semibold ">
           <button onClick={() => handleNavigationClick('/')} className="text-lg hover:text-gray-600 globalHover uppercase">Accueil</button>
