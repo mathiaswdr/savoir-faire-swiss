@@ -5,7 +5,7 @@ import ServiceCard from "./service-card";
 export default function Services() {
 
     return (
-        <section className="min-h-[90dvh] w-full  sm:px-6 lg:px-0 lg:w-screen lg:max-w-bigScreen py-8 lg:py-0">
+        <section id="nos-services" className="min-h-[90dvh] w-full  sm:px-6 lg:px-0 lg:w-screen lg:max-w-bigScreen py-8 lg:py-0">
             <div className="w-full flex flex-col lg:flex-row  lg:h-[45dvh] lg:justify-between items-stretch lg:items-start">
                 <ServiceCard 
                     title="Peinture"

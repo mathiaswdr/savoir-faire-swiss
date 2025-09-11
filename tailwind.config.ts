@@ -46,6 +46,7 @@ export default {
 			mainRed: '#EC6B60',
 			mainYellow: '#EDF4DB',
 			lightGray: '#4F6367',
+			darkGray: '#2f2912',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

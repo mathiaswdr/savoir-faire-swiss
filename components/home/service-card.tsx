@@ -27,14 +27,14 @@ export default function ServiceCard({title, description, style, crossColor, main
             </p>
 
             <Cross 
-                style="globalHover group-hover:rotate-[360deg] group-hover:opacity-0 absolute bottom-6 sm:bottom-8 lg:bottom-10 right-6 sm:right-8 lg:right-10 scale-75 sm:scale-90 lg:scale-100" 
+                style="hidden lg:block globalHover group-hover:rotate-[360deg] group-hover:opacity-0 absolute bottom-6 sm:bottom-8 lg:bottom-10 right-6 sm:right-8 lg:right-10 scale-75 sm:scale-90 lg:scale-100" 
                 color={isHovered ? mainColor : crossColor}
             />
 
             <ArrowRight 
                 size={102} 
                 color={isHovered ? mainColor : crossColor}
-                className="absolute bottom-6 sm:bottom-8 lg:bottom-10 right-6 sm:right-8 lg:right-10 opacity-0 globalHover group-hover:rotate-[360deg] group-hover:opacity-100 scale-75 sm:scale-90 lg:scale-100" 
+                className="absolute bottom-6 sm:bottom-8 lg:bottom-10 right-6 sm:right-8 lg:right-10 lg:opacity-0 globalHover group-hover:rotate-[360deg] group-hover:opacity-100 scale-75 sm:scale-90 lg:scale-100" 
             />
 
             {/* <h3 className='hidden sm:block absolute bottom-8 sm:bottom-12 lg:bottom-[4rem] left-6 sm:left-8 lg:left-10 font-semibold text-2xl sm:text-3xl lg:text-4xl uppercase italic translate-x-10 opacity-0 globalHover group-hover:translate-x-0 group-hover:opacity-100'>En savoir plus</h3> */}

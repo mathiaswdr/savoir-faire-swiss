@@ -1,141 +1,186 @@
+"use client";
+
 import Link from "next/link";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { useRouter, usePathname } from "next/navigation";
+import { scrollToSection } from "@/utils/tools";
 import Logo from "./logo";
 
 export default function Footer() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleDevisClick = () => {
+    if (pathname === '/') {
+      // Si on est sur la page d'accueil, scroll directement
+      scrollToSection('contact', -250);
+    } else {
+      // Si on est sur une autre page, naviguer vers l'accueil puis scroll
+      router.push('/');
+      // Attendre que la navigation soit terminée avant de scroller
+      setTimeout(() => {
+        scrollToSection('contact', -250);
+      }, 1000);
+    }
+  };
+
   return (
-    <footer className="bg-[#2f2912] text-white">
+    <footer className="bg-lightGray text-white">
       {/* Main Footer Content */}
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row justify-between gap-8 sm:gap-10 lg:gap-16">
           
           {/* Company Info */}
-          <div className="space-y-6">
-            <div className="w-48">
-              <Logo />
+          <div className="space-y-6 w-full lg:w-[350px] text-center lg:text-left">
+            <div className="lg:w-48 flex justify-center items-center lg:mx-0">
+              <Logo color="#EDF4DB"/>
             </div>
-            <p className="text-gray-300 leading-relaxed">
-              Votre partenaire de confiance pour tous vos projets de construction et rénovation en Suisse.
+            <p className="text-mainYellow leading-relaxed">
+              Votre partenaire de confiance pour tous vos projets de construction <span className="hidden lg:inline"><br/></span> et rénovation en Suisse.
             </p>
-            <div className="flex space-x-4">
-              {/* Social Links - Optional */}
-              <div className="w-8 h-8 bg-clearBlue rounded-full flex items-center justify-center hover:bg-darkBlue transition-colors duration-300 cursor-pointer">
-                <span className="text-[#2f2912] font-bold text-sm">F</span>
-              </div>
-              <div className="w-8 h-8 bg-clearBlue rounded-full flex items-center justify-center hover:bg-darkBlue transition-colors duration-300 cursor-pointer">
-                <span className="text-[#2f2912] font-bold text-sm">L</span>
-              </div>
+            <div className="flex space-x-4 justify-center lg:justify-start">
+              {/* Social Links */}
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-mainYellow hover:text-clearBlue transition-colors duration-300"
+              >
+                <FaFacebook className="w-6 h-6" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-mainYellow hover:text-clearBlue transition-colors duration-300"
+              >
+                <FaInstagram className="w-6 h-6" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-mainYellow hover:text-clearBlue transition-colors duration-300"
+              >
+                <FaLinkedin className="w-6 h-6" />
+              </a>
             </div>
           </div>
 
-          {/* Services */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-switzer font-semibold">Nos Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/services/peinture" className="text-gray-300 hover:text-clearBlue transition-colors duration-300 flex items-center group">
-                  <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  Peinture
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/platrerie" className="text-gray-300 hover:text-clearBlue transition-colors duration-300 flex items-center group">
-                  <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  Plâtrerie
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/isolation" className="text-gray-300 hover:text-clearBlue transition-colors duration-300 flex items-center group">
-                  <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  Isolation
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/recyclage" className="text-gray-300 hover:text-clearBlue transition-colors duration-300 flex items-center group">
-                  <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  Recyclage
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Right side - Menus */}
+          <div className="grid grid-cols-2 grid-rows-2 gap-8 justify-items-center sm:flex sm:flex-row sm:gap-10 lg:gap-16">
+            {/* Services */}
+            <div className="space-y-4 sm:space-y-6 text-mainYellow text-left w-full sm:w-auto">
+              <h3 className="text-lg sm:text-xl font-switzer font-semibold">Nos Services</h3>
+              <ul className="space-y-2 sm:space-y-3">
+                <li>
+                  <Link href="/services/peinture" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                    <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
+                    Peinture
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/platrerie" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                    <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
+                    Plâtrerie
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/isolation" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                    <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
+                    Isolation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/recyclage" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                    <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
+                    Recyclage
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Navigation */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-switzer font-semibold">Navigation</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/" className="text-gray-300 hover:text-clearBlue transition-colors duration-300 flex items-center group">
-                  <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  Accueil
-                </Link>
-              </li>
-              <li>
-                <Link href="/a-propos" className="text-gray-300 hover:text-clearBlue transition-colors duration-300 flex items-center group">
-                  <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  À propos
-                </Link>
-              </li>
-              <li>
-                <Link href="/nos-services" className="text-gray-300 hover:text-clearBlue transition-colors duration-300 flex items-center group">
-                  <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  Nos services
-                </Link>
-              </li>
-              <li>
-                <Link href="/realisations" className="text-gray-300 hover:text-clearBlue transition-colors duration-300 flex items-center group">
-                  <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  Réalisations
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-300 hover:text-clearBlue transition-colors duration-300 flex items-center group">
-                  <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+            {/* Navigation */}
+            <div className="space-y-4 sm:space-y-6 text-mainYellow text-left w-full sm:w-auto">
+              <h3 className="text-lg sm:text-xl font-switzer font-semibold">Navigation</h3>
+              <ul className="space-y-2 sm:space-y-3">
+                <li>
+                  <Link href="/" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                    <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
+                    Accueil
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/a-propos" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                    <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
+                    À propos
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/nos-services" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                    <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
+                    Nos services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/realisations" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                    <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
+                    Réalisations
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-mainYellow hover:text-clearBlue transition-colors duration-300 relative group">
+                    <ArrowRight className="w-4 h-4 absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-switzer font-semibold">Contact</h3>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-clearBlue flex-shrink-0 mt-1" />
-                <div className="text-gray-300">
-                  <p>Moulin-au-Rey 8</p>
-                  <p>1470 Lully-Fribourg</p>
-                  <p>Fribourg</p>
+            {/* Contact Info */}
+            <div className="space-y-4 sm:space-y-6 text-mainYellow text-left w-full sm:w-auto col-span-2 sm:col-span-1">
+              <h3 className="text-lg sm:text-xl font-switzer font-semibold">Contact</h3>
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-start space-x-3 justify-start">
+                  <MapPin className="w-5 h-5 text-mainYellow flex-shrink-0 mt-1" />
+                  <div className="text-mainYellow">
+                    <p>Moulin-au-Rey 8</p>
+                    <p>1470 Lully-Fribourg</p>
+                    <p>Fribourg</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3 justify-start">
+                  <Phone className="w-5 h-5 text-mainYellow flex-shrink-0" />
+                  <a 
+                    href="tel:+41767096011" 
+                    className="text-mainYellow hover:text-clearBlue transition-colors duration-300"
+                  >
+                    +41 76 709 60 11
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3 justify-start">
+                  <Mail className="w-5 h-5 text-mainYellow flex-shrink-0" />
+                  <a 
+                    href="mailto:info@savoirfaireswiss.com" 
+                    className="text-mainYellow hover:text-clearBlue transition-colors duration-300"
+                  >
+                    info@savoirfaireswiss.com
+                  </a>
                 </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-clearBlue flex-shrink-0" />
-                <a 
-                  href="tel:+41767096011" 
-                  className="text-gray-300 hover:text-clearBlue transition-colors duration-300"
+
+              {/* CTA Button */}
+              <div className="flex justify-start">
+                <button
+                  onClick={handleDevisClick}
+                  className="inline-flex items-center px-6 py-3 bg-mainYellow text-[#2f2912] font-semibold rounded-full hover:bg-darkBlue hover:text-white transition-all duration-300 group"
                 >
-                  +41 76 709 60 11
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-clearBlue flex-shrink-0" />
-                <a 
-                  href="mailto:info@savoirfaireswiss.com" 
-                  className="text-gray-300 hover:text-clearBlue transition-colors duration-300"
-                >
-                  info@savoirfaireswiss.com
-                </a>
+                  Devis gratuit
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </button>
               </div>
             </div>
-
-            {/* CTA Button */}
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-6 py-3 bg-clearBlue text-[#2f2912] font-semibold rounded-full hover:bg-darkBlue hover:text-white transition-all duration-300 group"
-            >
-              Devis gratuit
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
           </div>
         </div>
       </div>
@@ -144,29 +189,29 @@ export default function Footer() {
       <div className="border-t border-gray-700">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
-              © 2024 Savoir Faire Swiss SA. Tous droits réservés.
+            <div className="text-mainYellow text-sm">
+              © 2025 Savoir Faire Swiss SA. Tous droits réservés.
             </div>
-            <div className="flex space-x-6 text-sm">
+            {/* <div className="flex space-x-6 text-sm">
               <Link 
                 href="/mentions-legales" 
-                className="text-gray-400 hover:text-clearBlue transition-colors duration-300"
+                className="text-mainYellow hover:text-clearBlue transition-colors duration-300"
               >
                 Mentions légales
               </Link>
               <Link 
                 href="/politique-confidentialite" 
-                className="text-gray-400 hover:text-clearBlue transition-colors duration-300"
+                className="text-mainYellow hover:text-clearBlue transition-colors duration-300"
               >
                 Politique de confidentialité
               </Link>
               <Link 
                 href="/conditions-generales" 
-                className="text-gray-400 hover:text-clearBlue transition-colors duration-300"
+                className="text-mainYellow hover:text-clearBlue transition-colors duration-300"
               >
                 CGV
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

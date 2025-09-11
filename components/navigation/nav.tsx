@@ -1,14 +1,19 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useRouter, usePathname } from "next/navigation";
+import { Paintbrush, Hammer, Shield, Recycle } from "lucide-react";
 import MobileDropdown from "../ui/mobile-dropdown";
 import Logo from "../logo";
+import { scrollToSection } from "@/utils/tools";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -39,22 +44,64 @@ export default function Nav() {
     };
   }, []);
 
+  // Fonction pour gérer le scroll intelligent
+  const handleNavigationClick = (sectionId: string) => {
+    if (sectionId === '/') {
+      // Pour l'accueil, juste naviguer
+      router.push('/');
+      return;
+    }
+
+    if (pathname === '/') {
+      // Si on est sur la page d'accueil, scroll directement
+      scrollToSection(sectionId, -250);
+    } else {
+      // Si on est sur une autre page, naviguer vers l'accueil puis scroll
+      router.push('/');
+      setTimeout(() => {
+        scrollToSection(sectionId, -250);
+      }, 1000);
+    }
+  };
+
   const subMenuItems = [
-    { name: "Service 1", href: "/services/service1" },
-    { name: "Service 2", href: "/services/service2" },
-    { name: "Service 3", href: "/services/service3" },
-    { name: "Consulting", href: "/services/consulting" }
+    { 
+      name: "Peinture", 
+      href: "/services/peinture",
+      icon: Paintbrush,
+      description: "Peinture intérieure et extérieure"
+    },
+    { 
+      name: "Plâtrerie", 
+      href: "/services/platrerie",
+      icon: Hammer,
+      description: "Cloisons et enduits"
+    },
+    { 
+      name: "Isolation", 
+      href: "/services/isolation",
+      icon: Shield,
+      description: "Isolation thermique et acoustique"
+    },
+    { 
+      name: "Recyclage", 
+      href: "/services/recyclage",
+      icon: Recycle,
+      description: "Tri et évacuation de déchets"
+    }
   ];
 
   return (
     <nav className="fixed top-0 left-0 w-screen bg-clearBlue h-32 flex items-center justify-center px-8 border-b z-50">
       <div className="flex items-end justify-between gap-x-8 w-full max-w-screen-xl">
          {/* <h1 className="text-2xl font-bold">Logo</h1> */}
-        <Logo />
-        <div className="md:flex hidden items-center gap-x-6 font-switzer font-semibold uppercase">
-          <a href="/" className="text-lg hover:text-gray-600 globalHover">Accueil</a>
-          <a href="/about" className="text-lg hover:text-gray-600 globalHover">À propos</a>
-          
+        {/* <div className="w-[180px] sm:w-[270px]"> */}
+          <Logo color="#2f2912" />
+        {/* </div> */}
+        <div className="md:flex hidden items-center gap-x-6 font-switzer font-semibold ">
+          <button onClick={() => handleNavigationClick('/')} className="text-lg hover:text-gray-600 globalHover uppercase">Accueil</button>
+          <button onClick={() => handleNavigationClick('a-propos')} className="text-lg hover:text-gray-600 globalHover uppercase">À propos</button>
+
           {/* Menu déroulant Services - Desktop */}
           <div className="relative" ref={dropdownRef}>
             <button 
@@ -81,26 +128,33 @@ export default function Nav() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                  className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50 overflow-hidden"
                 >
-                  {subMenuItems.map((item, index) => (
-                    <motion.a
-                      key={item.name}
-                      href={item.href}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-gray-900 globalHover"
-                    >
-                      {item.name}
-                    </motion.a>
-                  ))}
+                  {subMenuItems.map((item, index) => {
+                    const IconComponent = item.icon;
+                    return (
+                      <motion.a
+                        key={item.name}
+                        href={item.href}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                        className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 globalHover border-b border-gray-100 last:border-b-0"
+                      >
+                        <IconComponent className="w-5 h-5 text-gray-500" />
+                        <div className="flex flex-col">
+                          <span className="font-medium">{item.name}</span>
+                          <span className="text-xs text-gray-500">{item.description}</span>
+                        </div>
+                      </motion.a>
+                    );
+                  })}
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
           
-          <a href="/contact" className="text-lg hover:text-gray-600 globalHover">Contact</a>
+          <button onClick={() => handleNavigationClick('contact')} className="text-lg hover:text-gray-600 globalHover uppercase">Contact</button>
         </div>
       </div>
 
@@ -128,8 +182,8 @@ export default function Nav() {
         transition={{type: "spring", stiffness: 300, damping: 30}}
         className="flex md:hidden fixed top-32 left-0 w-full px-8 h-screen bg-white flex-col items-start gap-y-6 pt-12"
       >
-        <a href="/" className="text-xl hover:text-gray-600 globalHover">Accueil</a>
-        <a href="/about" className="text-xl hover:text-gray-600 globalHover">À propos</a>
+        <button onClick={() => { handleNavigationClick('/'); setIsOpen(false); }} className="text-xl hover:text-gray-600 globalHover text-left">Accueil</button>
+        <button onClick={() => { handleNavigationClick('a-propos'); setIsOpen(false); }} className="text-xl hover:text-gray-600 globalHover text-left">À propos</button>
         
         {/* Menu déroulant Services - Mobile */}
         <MobileDropdown
@@ -139,9 +193,9 @@ export default function Nav() {
           onToggle={toggleDropdown}
         />
         
-        <a href="/contact" className="text-xl hover:text-gray-600 globalHover">Contact</a>
+        <button onClick={() => { handleNavigationClick('contact'); setIsOpen(false); }} className="text-xl hover:text-gray-600 globalHover text-left">Contact</button>
 
-        <button className="w-full h-14 mt-12 bg-gradient-to-tr from-t from-slate-950 to-slate-800 text-white text-xl font-bold rounded-lg">
+        <button onClick={() => { handleNavigationClick('contact'); setIsOpen(false); }} className="w-full h-14 mt-12 bg-gradient-to-tr from-t from-slate-950 to-slate-800 text-white text-xl font-bold rounded-lg">
           Contact
         </button>
       </motion.div>
