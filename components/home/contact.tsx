@@ -80,7 +80,7 @@ export default function Contact() {
               value={formData.name}
               onChange={handleChange}
               placeholder="NOM, PRÉNOM"
-              className="w-full px-6 py-4 bg-[#EDF4DB] placeholder-[#2f2912]/60 text-[#2f2912] rounded-none border-none outline-none focus:ring-2 focus:ring-[#7D9395] transition-all duration-300"
+              className="w-full px-6 py-4 bg-[#EDF4DB] placeholder-[#2f2912]/60 text-[#2f2912] rounded-lg border-none outline-none focus:ring-2 focus:ring-[#7D9395] transition-all duration-300"
               required
             />
           </div>
@@ -93,7 +93,7 @@ export default function Contact() {
               value={formData.email}
               onChange={handleChange}
               placeholder="ADRESSE E-MAIL"
-              className="w-full px-6 py-4 bg-[#EDF4DB] placeholder-[#2f2912]/60 text-[#2f2912] rounded-none border-none outline-none focus:ring-2 focus:ring-[#7D9395] transition-all duration-300"
+              className="w-full px-6 py-4 bg-[#EDF4DB] placeholder-[#2f2912]/60 text-[#2f2912] rounded-lg border-none outline-none focus:ring-2 focus:ring-[#7D9395] transition-all duration-300"
               required
             />
           </div>
@@ -106,7 +106,7 @@ export default function Contact() {
               onChange={handleChange}
               placeholder="MESSAGE"
               rows={15}
-              className="w-full px-6 py-4 bg-[#EDF4DB] placeholder-[#2f2912]/60 text-[#2f2912] rounded-none border-none outline-none resize-none focus:ring-2 focus:ring-[#7D9395] transition-all duration-300"
+              className="w-full px-6 py-4 bg-[#EDF4DB] placeholder-[#2f2912]/60 text-[#2f2912] rounded-lg border-none outline-none resize-none focus:ring-2 focus:ring-[#7D9395] transition-all duration-300"
               required
             />
           </div>
@@ -115,7 +115,7 @@ export default function Contact() {
           <div className="flex justify-end">
             <button
               type="submit"
-              className="group flex items-center gap-3 px-8 py-4 bg-mainYellow/80 text-[#2f2912] font-semibold uppercase tracking-wider hover:bg-[#c2caad] hover:text-white transition-all duration-300"
+              className="group flex items-center gap-3 px-8 py-4 bg-mainYellow/80 rounded-lg text-[#2f2912] font-semibold uppercase tracking-wider hover:bg-[#c2caad] hover:text-white transition-all duration-300"
             >
               Envoyer
               {/* <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" /> */}
@@ -126,7 +126,7 @@ export default function Contact() {
       </div>
 
       {/* Right Side - Company Info */}
-      <div className="hidden lg:flex w-full lg:w-1/2 bg-mainYellow h-[90dvh] max-h-[850px] p-8 sm:p-12 lg:p-16  flex-col justify-between items-center relative">
+      <div className="hidden lg:flex w-full lg:w-1/2 bg-mainYellow rounded-tl-lg rounded-bl-lg h-[90dvh] max-h-[850px] p-8 sm:p-12 lg:p-16  flex-col justify-between items-center relative">
         {/* Logo/Icon Placeholder */}
 
         <div className="w-full h-5/12 flex justify-center items-center relative ">
