@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, MapPin, Clock, DollarSign } from 'lucide-react';
 import { getProjectBySlug, getAllProjectSlugs } from '@/lib/projects-data';
+import ScrollToButton from '@/components/ui/scroll-to-button';
+import { ArrowDown } from 'lucide-react';
 
 interface ProjectPageProps {
   params: Promise<{
@@ -46,7 +48,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <p className="text-lg sm:text-xl opacity-90 mb-6">
               {project.location} • {project.year}
             </p>
-            <div className="flex flex-wrap gap-2 justify-center">
+            <div className="flex flex-wrap gap-2 justify-center mb-8">
               {project.works.map((work, index) => (
                 <span
                   key={index}
@@ -55,6 +57,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   {work}
                 </span>
               ))}
+            </div>
+            
+            {/* CTA Button */}
+
+
+            <div className="flex flex-col lg:flex-row gap-5 justify-center items-center mt-10">
+                {/* CTA Button */}
+                <ScrollToButton targetSection="infos" offsetY={-100}>
+                  En savoir plus
+                  <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
+
+                </ScrollToButton>
+
+                <ScrollToButton className='' targetSection="transformation-section" offsetY={-100} secondary>
+                  Avant / Après
+                </ScrollToButton>
             </div>
           </div>
         </div>
@@ -70,7 +88,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       {/* Project Details */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section id="infos" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Project Info Cards */}
           <div className="grid md:grid-cols-4 gap-6 mb-16">
@@ -97,7 +115,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
 
           {/* Before/After Section */}
-          <div className="mb-16">
+          <div id="transformation-section" className="mb-16">
             <h2 className="text-3xl lg:text-4xl font-switzer font-bold text-center mb-12">
               Transformation
             </h2>

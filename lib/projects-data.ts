@@ -36,7 +36,7 @@ export const projects: Project[] = [
     duration: "3 mois",
     budget: "25 000 - 35 000 CHF",
     beforeImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop",
-    afterImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&h=1080&fit=crop",
+    afterImage: "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg",
     description: "Transformation complète d'une cuisine datant des années 80 en un espace moderne et fonctionnel. Ce projet a impliqué une refonte totale de l'agencement pour optimiser l'espace et créer un lieu de vie convivial.",
     challenges: [
       "Espace restreint nécessitant une optimisation maximale",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     category: "Rénovation",
     duration: "2 mois",
     budget: "15 000 - 25 000 CHF",
-    beforeImage: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1920&h=1080&fit=crop",
+    beforeImage: "https://images.pexels.com/photos/804392/pexels-photo-804392.jpeg",
     afterImage: "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1920&h=1080&fit=crop",
     description: "Modernisation complète d'une salle de bain avec création d'un espace spa privé. Focus sur les matériaux nobles et les finitions de qualité pour créer une atmosphère relaxante.",
     challenges: [
@@ -136,8 +136,8 @@ export const projects: Project[] = [
     category: "Extension",
     duration: "6 mois",
     budget: "80 000 - 120 000 CHF",
-    beforeImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&h=1080&fit=crop",
-    afterImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop",
+    beforeImage: "https://images.pexels.com/photos/11427524/pexels-photo-11427524.jpeg",
+    afterImage: "https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg",
     description: "Agrandissement d'une maison familiale avec création d'un espace de vie ouvert donnant sur le jardin. Intégration harmonieuse avec l'architecture existante.",
     challenges: [
       "Respect de l'architecture existante",
@@ -189,7 +189,7 @@ export const projects: Project[] = [
     category: "Rénovation complète",
     duration: "4 mois",
     budget: "45 000 - 60 000 CHF",
-    beforeImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop",
+    beforeImage: "https://images.pexels.com/photos/3562689/pexels-photo-3562689.jpeg",
     afterImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop",
     description: "Rénovation complète d'un appartement 3.5 pièces avec redistribution des espaces pour créer un loft moderne et lumineux au cœur de Vevey.",
     challenges: [

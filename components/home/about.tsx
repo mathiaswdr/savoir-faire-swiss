@@ -111,7 +111,7 @@ export default function About() {
         >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                 <motion.div 
-                    className="relative h-64 sm:h-80 md:h-96  overflow-hidden shadow-lg"
+                    className="relative h-64 sm:h-80 md:h-96  overflow-hidden shadow-lg rounded-lg"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -119,7 +119,7 @@ export default function About() {
                     whileHover={{ scale: 1.02 }}
                 >
                     <Image 
-                        src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=800&h=600&fit=crop"
+                        src="https://images.pexels.com/photos/8482822/pexels-photo-8482822.jpeg"
                         alt="Notre équipe de professionnels sur chantier"
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-300"
@@ -127,7 +127,7 @@ export default function About() {
                     />
                 </motion.div>
                 <motion.div 
-                    className="relative h-64 sm:h-80 md:h-96  overflow-hidden shadow-lg"
+                    className="relative h-64 sm:h-80 md:h-96  overflow-hidden shadow-lg rounded-lg"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -135,7 +135,7 @@ export default function About() {
                     whileHover={{ scale: 1.02 }}
                 >
                     <Image 
-                        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop"
+                        src="https://images.pexels.com/photos/8482649/pexels-photo-8482649.jpeg"
                         alt="Travaux de rénovation de qualité"
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-300"

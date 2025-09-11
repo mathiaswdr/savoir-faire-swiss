@@ -22,27 +22,28 @@ export default function Work(props: WorkProps) {
         <div className="w-full lg:w-[48%] h-full relative ">
             <div className="flex flex-col lg:flex-row gap-5 justify-between items-center w-full ">
                 <div className="flex flex-col gap-y-2 w-full lg:w-1/2">
-                    <Image 
-                        src={beforeImage}
-                        alt={beforeAlt ? beforeAlt : "Image de chantier"}
-                        width={500}
-                        height={400}
-                        className="object-cover"
-                        quality={80}
-                    
-                    />
+                    <div className="relative w-full h-64 overflow-hidden rounded-lg">
+                        <Image 
+                            src={beforeImage}
+                            alt={beforeAlt ? beforeAlt : "Image de chantier"}
+                            fill
+                            className="object-cover"
+                            quality={80}
+                        />
+                    </div>
                     <h3 className="text-3xl font-semibold uppercase">Avant</h3>
                 </div>
 
                 <div className="flex flex-col gap-y-2 w-full lg:w-1/2">
-                    <Image 
-                        src={afterImage}
-                        alt={afterAlt ? afterAlt : "Image de chantier"}
-                        width={500}
-                        height={400}
-                        className="object-cover"
-                        quality={80}
-                    />
+                    <div className="relative w-full h-64 overflow-hidden rounded-lg">
+                        <Image 
+                            src={afterImage}
+                            alt={afterAlt ? afterAlt : "Image de chantier"}
+                            fill
+                            className="object-cover"
+                            quality={80}
+                        />
+                    </div>
                     <h3 className="text-3xl font-semibold uppercase">Après</h3>
                 </div>
             </div>

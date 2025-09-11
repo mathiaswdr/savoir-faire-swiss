@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: 'source.unsplash.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+        pathname: '/**',
+      },
     ],
     qualities: [50, 75, 80, 90, 95, 100],
   },

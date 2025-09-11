@@ -4,7 +4,7 @@ import ServiceCard from "./service-card";
 import Image from "next/image";
 import Work from "./work";
 import { projects } from "@/lib/projects-data";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export default function ShowWork() {
 

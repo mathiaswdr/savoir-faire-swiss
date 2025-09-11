@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, Phone, Mail, Calendar } from "lucide-react";
 import { notFound } from "next/navigation";
+import ScrollToButton from "@/components/ui/scroll-to-button";
+import { ArrowDown } from "lucide-react";
+import NavigateToButton from "@/components/navigation/navigate-to-button";
 
 // Types pour les services
 interface ServiceDetail {
@@ -24,9 +27,10 @@ const servicesData: Record<string, ServiceDetail> = {
     description: "Redonnez du caractère à vos espaces avec notre service de peinture",
     longDescription: "Redonnez du caractère à vos espaces avec notre service de peinture intérieure et extérieure. Nous préparons soigneusement les supports (ponçage, rebouchage, impression), protégeons votre chantier et appliquons des peintures durables à faibles émissions. Murs, plafonds, boiseries, métal ou façades : finitions mates, velours ou satin, nuanciers RAL/NCS à la demande.",
     images: [
-      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop"
+      "https://images.pexels.com/photos/7218525/pexels-photo-7218525.jpeg",
+      "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg",
+      "https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg",
+      "https://images.pexels.com/photos/3209045/pexels-photo-3209045.jpeg"
     ],
     features: [
       "Peinture intérieure et extérieure",
@@ -54,9 +58,10 @@ const servicesData: Record<string, ServiceDetail> = {
     description: "Travaux de plâtrerie professionnels pour tous vos projets",
     longDescription: "Nos équipes réalisent vos travaux de plâtrerie : cloisons et doublages en plaques de plâtre, faux-plafonds, enduits et lissage, bandes et joints. Solutions thermiques et phoniques, plaques hydrofuges et coupe-feu selon les besoins. Chantier protégé, finitions nettes, délais respectés.",
     images: [
-      "https://images.unsplash.com/photo-1631545806609-2dd94bb2779d?w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/209266/pexels-photo-209266.jpeg",
       "https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1562113865-23af7805e8bb?w=800&h=600&fit=crop"
+      "https://images.pexels.com/photos/209266/pexels-photo-209266.jpeg",
+      "https://images.pexels.com/photos/7931/pexels-photo-7931.jpg",
     ],
     features: [
       "Cloisons et doublages",
@@ -114,8 +119,8 @@ const servicesData: Record<string, ServiceDetail> = {
     description: "Tri et évacuation responsables des déchets de chantier",
     longDescription: "Tri et évacuation responsables des déchets de chantier : inertes, bois, ferrailles, cartons/plastiques, plâtre, D3E et déchets spécifiques. Bennes dédiées, acheminement vers filières agréées et site laissé propre avec justificatifs de prise en charge.",
     images: [
-      "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/33842119/pexels-photo-33842119.jpeg",
+      "https://images.pexels.com/photos/6990568/pexels-photo-6990568.jpeg",
       "https://images.unsplash.com/photo-1604187351574-c75ca79f5807?w=800&h=600&fit=crop"
     ],
     features: [
@@ -181,18 +186,34 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <h1 className="text-5xl md:text-7xl font-switzer font-bold mb-4">
             {service.title}
           </h1>
-          <p className="text-xl md:text-2xl max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8">
             {service.description}
           </p>
+          
+          <div className="flex flex-col lg:flex-row gap-5 justify-center items-center">
+            {/* CTA Button */}
+            <ScrollToButton targetSection="content-section" offsetY={-100}>
+              En savoir plus
+              <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
+
+            </ScrollToButton>
+
+            <ScrollToButton targetSection="gallery" offsetY={-100} secondary>
+              Gallerie
+              {/* <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" /> */}
+
+            </ScrollToButton>
+          </div>
+
         </div>
       </section>
 
       {/* Content Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section id="content-section" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 w-full">
             {/* Main Content */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 w-full">
               <div className="prose prose-lg max-w-none mb-12">
                 <h2 className="text-3xl font-switzer font-semibold mb-6">
                   À propos de ce service
@@ -244,25 +265,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   ))}
                 </div>
               </div>
-
-              {/* Gallery */}
-              <div>
-                <h3 className="text-2xl font-switzer font-semibold mb-6">
-                  Galerie
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {service.images.slice(1).map((image, index) => (
-                    <div key={index} className="relative h-64 rounded-lg overflow-hidden">
-                      <Image
-                        src={image}
-                        alt={`${service.title} ${index + 2}`}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
 
             {/* Sidebar */}
@@ -303,13 +305,21 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                     Contactez-nous pour obtenir un devis personnalisé et gratuit.
                   </p>
                   <div className="space-y-3">
-                    <Link 
+                    {/* <Link 
                       href="/contact"
                       className="flex items-center justify-center w-full py-3 px-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-colors"
                     >
                       <Mail className="w-5 h-5 mr-2" />
                       Demander un devis
-                    </Link>
+                    </Link> */}
+                    <NavigateToButton 
+                        targetSection="contact"
+                        offsetY={-100}
+                        className="!w-full"
+                    >
+                      Demander un devis
+                    </NavigateToButton>
+
                     <a 
                       href="tel:+41123456789"
                       className="flex items-center justify-center w-full py-3 px-4 border border-white text-white font-semibold rounded-full hover:bg-white hover:text-black transition-colors"
@@ -321,7 +331,26 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 </div>
               </div>
             </div>
+            
           </div>
+              {/* Gallery */}
+              <div id="gallery" className=" w-full">
+                <h3 className="text-2xl font-switzer font-semibold mb-6 ">
+                  Galerie
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {service.images.slice(1).map((image, index) => (
+                    <div key={index} className="relative h-64 rounded-lg overflow-hidden">
+                      <Image
+                        src={image}
+                        alt={`${service.title} ${index + 2}`}
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
         </div>
       </section>
     </main>
