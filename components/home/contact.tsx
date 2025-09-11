@@ -126,7 +126,7 @@ export default function Contact() {
       </div>
 
       {/* Right Side - Company Info */}
-      <div className="hidden lg:flex w-full lg:w-1/2 bg-mainYellow h-[80dvh] max-h-[750px] p-8 sm:p-12 lg:p-16  flex-col justify-between items-center relative">
+      <div className="hidden lg:flex w-full lg:w-1/2 bg-mainYellow h-[80dvh] max-h-[850px] p-8 sm:p-12 lg:p-16  flex-col justify-between items-center relative">
         {/* Logo/Icon Placeholder */}
 
         <div className="w-full h-5/12 flex justify-center items-center relative ">
