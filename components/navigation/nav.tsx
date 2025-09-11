@@ -99,11 +99,11 @@ export default function Nav() {
       <div className="flex items-end justify-between gap-x-8 w-full max-w-screen-xl">
          {/* <h1 className="text-2xl font-bold">Logo</h1> */}
         {/* <div className="w-[180px] sm:w-[270px]"> */}
-          <Logo color="#2f2912" style="w-[200px] sm:w-[200px] lg:w-[270px]"/>
+          <Logo color="#2f2912" style="!w-[220px] sm:!w-[200px] lg:!w-[270px]"/>
         {/* </div> */}
         <div className="md:flex hidden items-center gap-x-6 font-switzer font-semibold ">
           <button onClick={() => handleNavigationClick('/')} className="text-lg hover:text-gray-600 globalHover uppercase">Accueil</button>
-          <button onClick={() => handleNavigationClick('a-propos')} className="text-lg hover:text-gray-600 globalHover uppercase">À propos</button>
+          <button onClick={() => handleNavigationClick('nos-realisations')} className="text-lg hover:text-gray-600 globalHover uppercase">Nos réalisations</button>
 
           {/* Menu déroulant Services - Desktop */}
           <div className="relative" ref={dropdownRef}>
@@ -156,7 +156,8 @@ export default function Nav() {
               )}
             </AnimatePresence>
           </div>
-          
+
+          <button onClick={() => handleNavigationClick('a-propos')} className="text-lg hover:text-gray-600 globalHover uppercase">À propos</button>
           <button onClick={() => handleNavigationClick('contact')} className="text-lg hover:text-gray-600 globalHover uppercase">Contact</button>
         </div>
       </div>
@@ -186,6 +187,7 @@ export default function Nav() {
         className="flex md:hidden fixed top-32 left-0 w-full px-8 h-screen bg-white flex-col items-start gap-y-6 pt-6"
       >
         <button onClick={() => { handleNavigationClick('/'); setIsOpen(false); }} className="text-xl hover:text-gray-600 globalHover text-left">Accueil</button>
+        <button onClick={() => { handleNavigationClick('nos-realisations'); setIsOpen(false); }} className="text-xl hover:text-gray-600 globalHover text-left">Nos réalisations</button>
         <button onClick={() => { handleNavigationClick('a-propos'); setIsOpen(false); }} className="text-xl hover:text-gray-600 globalHover text-left">À propos</button>
         
         {/* Menu déroulant Services - Mobile */}

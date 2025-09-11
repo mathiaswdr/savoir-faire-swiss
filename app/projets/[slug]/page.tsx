@@ -26,7 +26,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white pt-32">
       {/* Hero Section */}
       <section className="relative h-[70dvh] w-full">
         <Image
@@ -60,13 +60,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
 
         {/* Back Button */}
-        <Link
+        {/* <Link
           href="/#nos-realisations"
           className="absolute top-6 left-6 z-10 inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg text-white hover:bg-white/30 transition-all duration-300"
         >
           <ArrowLeft size={20} />
           Retour aux projets
-        </Link>
+        </Link> */}
       </section>
 
       {/* Project Details */}
