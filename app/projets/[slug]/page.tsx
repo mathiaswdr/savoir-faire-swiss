@@ -31,7 +31,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main className="min-h-screen bg-white pt-32">
       {/* Hero Section */}
-      <section className="relative h-[70dvh] w-full">
+      <section className="relative h-[620px] sm:h-[700px] lg:h-[80dvh] w-full">
         <Image
           src={project.afterImage}
           alt={project.title}

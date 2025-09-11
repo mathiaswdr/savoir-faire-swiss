@@ -163,7 +163,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   return (
     <main className="pt-32">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[620px] sm:h-[700px] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={service.images[0]}
