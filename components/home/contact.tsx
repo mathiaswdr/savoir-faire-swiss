@@ -64,9 +64,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full lg:max-w-bigScreen min-h-[95dvh] lg:min-h-[100dvh] mt-32 flex flex-col lg:flex-row">
+    <section id="contact" className="w-full lg:max-w-bigScreen min-h-[95dvh] lg:min-h-[100dvh] mt-14 xl:mt-32 flex flex-col lg:flex-row">
       {/* Left Side - Contact Form */}
-      <div className="w-full h-[80dvh] lg:w-1/2 px-4 lg:px-10 flex justify-start items-start flex-col">
+      <div className="w-full min-h-[80dvh] py-6 max-h-[800px] lg:w-1/2 px-4 lg:px-10 flex justify-start items-start flex-col">
         <h2 className="font-switzer text-4xl sm:text-5xl lg:text-6xl font-semibold mb-8">
           Nous contacter
         </h2>
@@ -126,10 +126,10 @@ export default function Contact() {
       </div>
 
       {/* Right Side - Company Info */}
-      <div className="hidden lg:flex w-full lg:w-1/2 bg-mainYellow h-[80dvh] p-8 sm:p-12 lg:p-16  flex-col justify-between items-center relative">
+      <div className="hidden lg:flex w-full lg:w-1/2 bg-mainYellow h-[80dvh] max-h-[750px] p-8 sm:p-12 lg:p-16  flex-col justify-between items-center relative">
         {/* Logo/Icon Placeholder */}
 
-        <div className="w-full h-5/12 flex justify-center items-center relative top-32">
+        <div className="w-full h-5/12 flex justify-center items-center relative ">
           <LogoBig width={300} />
         </div>
 

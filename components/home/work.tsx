@@ -56,7 +56,7 @@ export default function Work(props: WorkProps) {
                     <span className="font-semibold">Année: </span>
                     <span>{year}</span>
                 </div>
-                <div className="flex flex-col lg:flex-row justify-start items-start gap-x-4 lg:justify-start lg:items-center">
+                <div className="flex flex-col 2xl:flex-row justify-start items-start gap-x-4 2xl:justify-start 2xl:items-center">
                     <span className="font-semibold min-w-44">Travaux réalisés :  </span>
                     <span>{works.join(", ")}</span>
                 </div>

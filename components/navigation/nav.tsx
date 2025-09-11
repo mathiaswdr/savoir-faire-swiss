@@ -103,7 +103,7 @@ export default function Nav() {
           <Logo color="#2f2912" style="!w-[220px] sm:!w-[200px] lg:!w-[270px]"/>
         </Link>
         {/* </div> */}
-        <div className="md:flex hidden items-center gap-x-6 font-switzer font-semibold ">
+        <div className="md:flex hidden items-center gap-x-6  font-semibold ">
           <button onClick={() => handleNavigationClick('/')} className="text-lg hover:text-gray-600 globalHover uppercase">Accueil</button>
           <button onClick={() => handleNavigationClick('nos-realisations')} className="text-lg hover:text-gray-600 globalHover uppercase">Nos réalisations</button>
 
