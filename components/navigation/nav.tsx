@@ -95,7 +95,7 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-screen bg-clearBlue h-32 flex items-center justify-center px-8 border-b z-50">
+    <nav className="fixed top-0 left-0 w-screen bg-clearBlue h-32 flex items-center justify-center px-8 z-50">
       <div className="flex items-end justify-between gap-x-8 w-full max-w-screen-xl">
          {/* <h1 className="text-2xl font-bold">Logo</h1> */}
         {/* <div className="w-[180px] sm:w-[270px]"> */}
