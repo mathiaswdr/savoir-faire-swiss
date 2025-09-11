@@ -1,10 +1,10 @@
 
 
-export default function Logo({color}: {color?: string}) {
+export default function Logo({color, style}: {color?: string, style?: string}) {
   const logoColor = color || '#2f2912';
   
   return (
-    <svg className="w-[270px]" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360.05 106.67">
+    <svg className={`w-[270px] ${style}`} id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360.05 106.67">
         <defs>
             <style>
             {`.cls-1 {

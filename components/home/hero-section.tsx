@@ -69,7 +69,7 @@ export default function HeroSection() {
               <span className="block">
                 Vos travaux,
               </span>
-              <span className="block mt-2">
+              <span className="block mt-0">
                 notre <span className="font-switzer italic text-clearBlue">savoir-faire</span>
               </span>
             </h1>
@@ -122,30 +122,33 @@ export default function HeroSection() {
       </button> */}
 
       {/* Slide Indicators */}
-      <motion.div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.8 }}
-      >
-        {carouselImages.map((_, index) => (
-          <motion.button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide 
-                ? "bg-white w-8 sm:w-10 md:w-12" 
-                : "bg-white/50 hover:bg-white/70 w-2 sm:w-3"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 2 + (index * 0.1) }}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          />
-        ))}
-      </motion.div>
+      <div className="w-full absolute bottom-0 left-0 h-12 flex justify-center items-center ">
+        <motion.div 
+          className=" z-30 flex gap-2"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.8 }}
+        >
+          {carouselImages.map((_, index) => (
+            <motion.button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide 
+                  ? "bg-white w-8 sm:w-10 md:w-12" 
+                  : "bg-white/50 hover:bg-white/70 w-2 sm:w-3"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 2 + (index * 0.1) }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            />
+          ))}
+        </motion.div>
+      </div>
+
     </section>
   );
 }

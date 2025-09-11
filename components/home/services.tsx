@@ -1,12 +1,21 @@
+'use client';
+
 import Cross from "../cross";
 import ServiceCard from "./service-card";
+import { motion } from "framer-motion";
 
 
 export default function Services() {
 
     return (
         <section id="nos-services" className="min-h-[90dvh] w-full  sm:px-6 lg:px-0 lg:w-screen lg:max-w-bigScreen py-8 lg:py-0">
-            <div className="w-full flex flex-col lg:flex-row  lg:h-[45dvh] lg:justify-between items-stretch lg:items-start">
+            <motion.div 
+                className="w-full flex flex-col lg:flex-row  lg:h-[45dvh] lg:justify-between items-stretch lg:items-start"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8 }}
+            >
                 <ServiceCard 
                     title="Peinture"
                     description="Redonnez du caractère à vos espaces avec notre service de peinture intérieure et extérieure. Nous préparons soigneusement les supports (ponçage, rebouchage, impression), protégeons votre chantier et appliquons des peintures durables à faibles émissions. Murs, plafonds, boiseries, métal ou façades : finitions mates, velours ou satin, nuanciers RAL/NCS à la demande. Travail soigné, délais tenus, résultat net et durable."
@@ -23,8 +32,14 @@ export default function Services() {
                     mainColor="#B8D8D8"
                     slug="platrerie"
                 />
-            </div>
-            <div className="w-full flex flex-col lg:flex-row  lg:h-[45dvh] lg:justify-between items-stretch lg:items-start lg:mt-0">
+            </motion.div>
+            <motion.div 
+                className="w-full flex flex-col lg:flex-row  lg:h-[45dvh] lg:justify-between items-stretch lg:items-start lg:mt-0"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+            >
                 <ServiceCard
                     title="Isolation"
                     description="Améliorez le confort thermique et acoustique de vos bâtiments. Isolation des combles, murs, planchers et toitures (ITI/ITE), traitement des ponts thermiques, pose de pare-vapeur et membranes d'étanchéité à l'air. Matériaux adaptés (laine minérale, fibre de bois, PIR, ouate). Chantier protégé, finitions soignées, économies d'énergie durables."
@@ -41,7 +56,7 @@ export default function Services() {
                     mainColor="#EDF4DB"
                     slug="recyclage"
                 />
-            </div>
+            </motion.div>
         </section>
     )
 } 

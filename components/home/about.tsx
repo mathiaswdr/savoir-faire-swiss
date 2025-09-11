@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { scrollToSection } from "@/utils/tools";
 
 export default function About() {
@@ -54,19 +54,19 @@ export default function About() {
 
             <motion.div 
                 className="flex flex-col gap-y-4 items-stretch sm:items-center lg:items-end"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                // initial={{ opacity: 0, x: 50 }}
+                // whileInView={{ opacity: 1, x: 0 }}
+                // viewport={{ once: true }}
+                // transition={{ duration: 0.8, delay: 0.4 }}
             >
                 <motion.button
                     onClick={() => scrollToSection('nos-realisations', -150)}
-                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-clearBlue text-black font-semibold rounded-lg group hover:bg-[#7D9395] hover:text-white transition-all duration-300 text-base sm:text-lg"
+                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-clearBlue text-black font-semibold rounded-lg  text-base sm:text-lg"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.6 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02, backgroundColor: "#7D9395", color: "#ffffff" }}
                     whileTap={{ scale: 0.98 }}
                 >
                     Avant / après
@@ -74,12 +74,12 @@ export default function About() {
                 </motion.button>
                 <motion.button
                     onClick={() => scrollToSection('nos-services', -150)}
-                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-mainRed text-black font-semibold rounded-lg group hover:bg-[#7D9395] hover:text-white transition-all duration-300 text-base sm:text-lg"
+                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-mainRed text-black font-semibold rounded-lg  text-base sm:text-lg"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.7 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02, backgroundColor: "#7D9395", color: "#ffffff" }}
                     whileTap={{ scale: 0.98 }}
                 >
                     Nos services
@@ -87,12 +87,12 @@ export default function About() {
                 </motion.button>
                 <motion.button
                     onClick={() => scrollToSection('contact', -150)}
-                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-mainYellow text-black font-semibold rounded-lg group hover:bg-[#7D9395] hover:text-white transition-all duration-300 text-base sm:text-lg"
+                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-mainYellow text-black font-semibold rounded-lg  text-base sm:text-lg"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.8 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02, backgroundColor: "#7D9395", color: "#ffffff" }}
                     whileTap={{ scale: 0.98 }}
                 >
                     Devis gratuit

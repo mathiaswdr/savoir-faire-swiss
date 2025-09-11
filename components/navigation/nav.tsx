@@ -7,6 +7,9 @@ import { Paintbrush, Hammer, Shield, Recycle } from "lucide-react";
 import MobileDropdown from "../ui/mobile-dropdown";
 import Logo from "../logo";
 import { scrollToSection } from "@/utils/tools";
+import { projects } from "@/lib/projects-data";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -96,7 +99,7 @@ export default function Nav() {
       <div className="flex items-end justify-between gap-x-8 w-full max-w-screen-xl">
          {/* <h1 className="text-2xl font-bold">Logo</h1> */}
         {/* <div className="w-[180px] sm:w-[270px]"> */}
-          <Logo color="#2f2912" />
+          <Logo color="#2f2912" style="w-[200px] sm:w-[200px] lg:w-[270px]"/>
         {/* </div> */}
         <div className="md:flex hidden items-center gap-x-6 font-switzer font-semibold ">
           <button onClick={() => handleNavigationClick('/')} className="text-lg hover:text-gray-600 globalHover uppercase">Accueil</button>
@@ -164,15 +167,15 @@ export default function Nav() {
       >
         <motion.span 
           animate={isOpen ? {rotate: 45, y: 6} : {rotate: 0, y: 0}}
-          className="w-6 h-0.5 bg-black "
+          className="w-6 h-0.5 bg-darkGray rounded-full "
         />
         <motion.span 
           animate={isOpen ? {opacity: 0} : {opacity: 1}}
-          className="w-6 h-0.5 bg-black "
+          className="w-6 h-0.5 bg-darkGray rounded-full "
         />
         <motion.span 
           animate={isOpen ? {rotate: -45, y: -6} : {rotate: 0, y: 0}}
-          className="w-6 h-0.5 bg-black "
+          className="w-6 h-0.5 bg-darkGray rounded-full "
         />
       </button>
 
@@ -180,7 +183,7 @@ export default function Nav() {
         initial={{x: "-100%"}}
         animate={isOpen ? {x: 0} : {x: "-100%"}}
         transition={{type: "spring", stiffness: 300, damping: 30}}
-        className="flex md:hidden fixed top-32 left-0 w-full px-8 h-screen bg-white flex-col items-start gap-y-6 pt-12"
+        className="flex md:hidden fixed top-32 left-0 w-full px-8 h-screen bg-white flex-col items-start gap-y-6 pt-6"
       >
         <button onClick={() => { handleNavigationClick('/'); setIsOpen(false); }} className="text-xl hover:text-gray-600 globalHover text-left">Accueil</button>
         <button onClick={() => { handleNavigationClick('a-propos'); setIsOpen(false); }} className="text-xl hover:text-gray-600 globalHover text-left">À propos</button>
@@ -195,9 +198,40 @@ export default function Nav() {
         
         <button onClick={() => { handleNavigationClick('contact'); setIsOpen(false); }} className="text-xl hover:text-gray-600 globalHover text-left">Contact</button>
 
-        <button onClick={() => { handleNavigationClick('contact'); setIsOpen(false); }} className="w-full h-14 mt-12 bg-gradient-to-tr from-t from-slate-950 to-slate-800 text-white text-xl font-bold rounded-lg">
-          Contact
-        </button>
+        {/* Project Cards */}
+        <div className="w-full mt-4">
+          {/* <h3 className="text-lg font-semibold mb-4 text-gray-800">Nos réalisations</h3> */}
+          <div className="grid grid-cols-1 gap-4">
+            {projects.slice(0, 2).map((project, index) => (
+              <Link
+                key={project.id}
+                href={`/projets/${project.slug}`}
+                onClick={() => setIsOpen(false)}
+                className="relative h-40 rounded-lg overflow-hidden group"
+              >
+                <Image
+                  src={project.afterImage}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
+                <div className="absolute bottom-0 left-0 p-4 text-white">
+                  <h4 className="font-semibold text-lg">{project.title}</h4>
+                  <p className="text-sm opacity-90">{project.location} • {project.year}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* <div className="flex flex-col gap-y-4 justify-center items-center w-full mt-2">
+          <button onClick={() => { handleNavigationClick('contact'); setIsOpen(false); }} className="w-full h-14  bg-darkBlue text-white text-xl font-bold rounded-lg">
+            Devis gratuit
+          </button>
+        </div> */}
+
+
       </motion.div>
     </nav>
   );
