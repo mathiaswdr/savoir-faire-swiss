@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, MapPin, Clock, DollarSign } from 'lucide-react';
 import { getProjectBySlug, getAllProjectSlugs } from '@/lib/projects-data';
 import ScrollToButton from '@/components/ui/scroll-to-button';
 import { ArrowDown } from 'lucide-react';
+import NavigateToButton from '@/components/navigation/navigate-to-button';
 
 interface ProjectPageProps {
   params: Promise<{
@@ -230,20 +231,21 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {/* CTA Section */}
       <section className="bg-clearBlue text-darkGray py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center flex justify-center items-center flex-col">
           <h2 className="text-3xl lg:text-4xl font-switzer font-bold mb-6">
             Un projet similaire en tête ?
           </h2>
           <p className="text-lg mb-8 opacity-90">
             Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#B8D8D8] text-black font-semibold rounded-lg hover:bg-[#7D9395] hover:text-white transition-all duration-300 text-lg"
+          <NavigateToButton
+            targetSection="contact"
+            className='!w-64 gap-x-3'
+            // className="inline-flex items-center gap-2 px-8 py-4 bg-[#B8D8D8] text-black font-semibold rounded-lg hover:bg-[#7D9395] hover:text-white transition-all duration-300 text-lg"
           >
             Nous contacter
             <ArrowLeft className="rotate-180" size={20} />
-          </Link>
+          </NavigateToButton>
         </div>
       </section>
     </main>

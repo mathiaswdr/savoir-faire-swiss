@@ -40,7 +40,7 @@ export default function ScrollToButton({
   return (
     <button
       onClick={handleClick}
-      className={`w-10/12 lg:w-58 inline-flex justify-center items-center px-8 py-4 bg-clearBlue text-black font-semibold rounded-lg hover:bg-clearBlue/90 transition-colors group ${className}`}
+      className={`w-10/12 lg:w-58 inline-flex justify-center items-center px-8 py-4 bg-clearBlue border-2 border-clearBlue text-black font-semibold rounded-lg hover:bg-clearBlue/90 transition-colors group ${className}`}
     >
       {children}
       {/* <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-tr2ansform" /> */}
