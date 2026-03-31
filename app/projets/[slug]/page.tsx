@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowLeft, Calendar, MapPin, Clock, DollarSign } from 'lucide-react';
 import { getProjectBySlug, getAllProjectSlugs } from '@/lib/projects-data';
 import ScrollToButton from '@/components/ui/scroll-to-button';
@@ -78,14 +77,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </div>
 
-        {/* Back Button */}
-        {/* <Link
-          href="/#nos-realisations"
-          className="absolute top-6 left-6 z-10 inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg text-white hover:bg-white/30 transition-all duration-300"
-        >
-          <ArrowLeft size={20} />
-          Retour aux projets
-        </Link> */}
       </section>
 
       {/* Project Details */}
@@ -236,7 +227,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             Un projet similaire en tête ?
           </h2>
           <p className="text-lg mb-8 opacity-90">
-            Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.
+            Contactez-nous pour discuter de votre projet et de vos besoins.
           </p>
           <NavigateToButton
             targetSection="contact"

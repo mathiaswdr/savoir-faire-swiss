@@ -1,7 +1,7 @@
 
-
 import Link from 'next/link'
-import { ArrowLeft, Home } from 'lucide-react'
+import { Home } from 'lucide-react'
+import NavigateToButton from '@/components/navigation/navigate-to-button'
 
 export default function NotFound() {
   return (
@@ -47,15 +47,27 @@ export default function NotFound() {
             Vous cherchez quelque chose de spécifique ?
           </p>
           <div className="flex flex-wrap justify-center gap-2">
-            <Link href="/#nos-services" className="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition-colors">
+            <NavigateToButton
+              targetSection="nos-services"
+              offsetY={-250}
+              className="!w-auto !bg-gray-100 !px-3 !py-1 !text-sm hover:!bg-gray-200"
+            >
               Nos services
-            </Link>
-            <Link href="/#nos-realisations" className="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition-colors">
+            </NavigateToButton>
+            <NavigateToButton
+              targetSection="nos-realisations"
+              offsetY={-250}
+              className="!w-auto !bg-gray-100 !px-3 !py-1 !text-sm hover:!bg-gray-200"
+            >
               Nos réalisations
-            </Link>
-            <Link href="/#contact" className="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition-colors">
+            </NavigateToButton>
+            <NavigateToButton
+              targetSection="contact"
+              offsetY={-250}
+              className="!w-auto !bg-gray-100 !px-3 !py-1 !text-sm hover:!bg-gray-200"
+            >
               Contact
-            </Link>
+            </NavigateToButton>
           </div>
         </div>
       </div>

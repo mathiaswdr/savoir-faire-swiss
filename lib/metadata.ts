@@ -5,7 +5,7 @@ export const siteMetadata: Metadata = {
     default: "Savoir Faire Swiss - Entreprise de Construction & Rénovation en Suisse Romande",
     template: "%s | Savoir Faire Swiss"
   },
-  description: "Entreprise de construction et rénovation en Suisse Romande. Spécialistes en peinture intérieure et extérieure, isolation thermique et acoustique, plâtrerie, recyclage de déchets de chantier. Devis gratuit à Genève, Lausanne, Fribourg, Vevey et environs.",
+  description: "Entreprise de construction et rénovation en Suisse Romande. Spécialistes en peinture intérieure et extérieure, isolation thermique et acoustique, plâtrerie et recyclage de déchets de chantier à Genève, Lausanne, Fribourg, Vevey et environs.",
   keywords: [
     // Services principaux
     "entreprise construction suisse romande",
@@ -28,12 +28,11 @@ export const siteMetadata: Metadata = {
     "isolation ITI ITE",
     "enduits lissage plâtre",
     "évacuation déchets construction",
-    "devis gratuit rénovation",
     "artisan peintre certifié",
     
     // Mots-clés longue traîne
     "entreprise construction écologique suisse",
-    "rénovation appartement genève prix",
+    "rénovation appartement genève",
     "isolation combles perdus suisse romande",
     "peinture intérieure sans COV",
     "plâtrerie sèche traditionnelle"
@@ -58,12 +57,12 @@ export const siteMetadata: Metadata = {
     url: "https://savoirfaireswiss.com",
     siteName: "Savoir Faire Swiss",
     title: "Savoir Faire Swiss - Entreprise de Construction & Rénovation en Suisse Romande",
-    description: "Votre partenaire de confiance pour tous vos projets de construction et rénovation en Suisse Romande. Peinture, isolation, plâtrerie, recyclage. Devis gratuit.",
+    description: "Votre partenaire de confiance pour tous vos projets de construction et rénovation en Suisse Romande. Peinture, isolation, plâtrerie et recyclage.",
     images: [
       {
         url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        width: 1201,
+        height: 601,
         alt: "Savoir Faire Swiss - Entreprise de Construction en Suisse Romande",
       },
     ],
@@ -71,15 +70,21 @@ export const siteMetadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Savoir Faire Swiss - Construction & Rénovation Suisse Romande",
-    description: "Entreprise de construction spécialisée en peinture, isolation, plâtrerie. Devis gratuit en Suisse Romande.",
-    images: ["/twitter-image.jpg"],
+    description: "Entreprise de construction spécialisée en peinture, isolation et plâtrerie en Suisse Romande.",
+    images: [
+      {
+        url: "/twitter-image.jpg",
+        width: 1201,
+        height: 631,
+        alt: "Savoir Faire Swiss - Construction & Rénovation Suisse Romande",
+      },
+    ],
     creator: "@savoirfaireswiss",
   },
   alternates: {
     canonical: "https://savoirfaireswiss.com",
     languages: {
       'fr-CH': 'https://savoirfaireswiss.com',
-      'fr': 'https://savoirfaireswiss.com/fr',
     },
   },
   verification: {

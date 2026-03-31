@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ChevronLeft, Phone, Mail, Calendar } from "lucide-react";
+import { Phone, Calendar } from "lucide-react";
 import { notFound } from "next/navigation";
 import ScrollToButton from "@/components/ui/scroll-to-button";
 import { ArrowDown } from "lucide-react";
@@ -17,7 +16,6 @@ interface ServiceDetail {
   mainColor: string;
   crossColor: string;
   duration: string;
-  price: string;
 }
 
 // Configuration des services
@@ -41,7 +39,7 @@ const servicesData: Record<string, ServiceDetail> = {
       "Nuanciers RAL/NCS personnalisés"
     ],
     process: [
-      "Diagnostic et devis gratuit",
+      "Diagnostic et étude du projet",
       "Protection du chantier",
       "Préparation des surfaces",
       "Application des sous-couches",
@@ -50,8 +48,7 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#7D9395",
     crossColor: "#EDF4DB",
-    duration: "1-4 semaines",
-    price: "À partir de 20€/m²"
+    duration: "1-4 semaines"
   },
   "platrerie": {
     title: "Plâtrerie",
@@ -81,8 +78,7 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#B8D8D8",
     crossColor: "#EC6B60",
-    duration: "2-6 semaines",
-    price: "À partir de 35€/m²"
+    duration: "2-6 semaines"
   },
   "isolation": {
     title: "Isolation",
@@ -111,8 +107,7 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#EC6B60",
     crossColor: "#B8D8D8",
-    duration: "1-3 semaines",
-    price: "À partir de 40€/m²"
+    duration: "1-3 semaines"
   },
   "recyclage": {
     title: "Recyclage",
@@ -141,8 +136,7 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#4F6367",
     crossColor: "#EDF4DB",
-    duration: "Selon chantier",
-    price: "Sur devis"
+    duration: "Selon chantier"
   },
   "maconnerie": {
     title: "Maçonnerie",
@@ -172,8 +166,7 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#B8D8D8",
     crossColor: "#EC6B60",
-    duration: "2-8 semaines",
-    price: "À partir de 60€/m³"
+    duration: "2-8 semaines"
   },
   "carrelage": {
     title: "Carrelage",
@@ -203,8 +196,7 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#7D9395",
     crossColor: "#EDF4DB",
-    duration: "1-3 semaines",
-    price: "À partir de 45€/m²"
+    duration: "1-3 semaines"
   },
   "electricite": {
     title: "Électricité",
@@ -234,8 +226,7 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#EC6B60",
     crossColor: "#B8D8D8",
-    duration: "1-2 semaines",
-    price: "À partir de 80€/point"
+    duration: "1-2 semaines"
   },
   "demolition": {
     title: "Démolition",
@@ -265,8 +256,7 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#4F6367",
     crossColor: "#EDF4DB",
-    duration: "1-4 semaines",
-    price: "À partir de 25€/m³"
+    duration: "1-4 semaines"
   },
   "revetements-de-sols": {
     title: "Revêtements - Parquets",
@@ -296,8 +286,7 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#EDF4DB",
     crossColor: "#7D9395",
-    duration: "3-10 jours",
-    price: "À partir de 35€/m²"
+    duration: "3-10 jours"
   },
   "sanitaire-cuisine": {
     title: "Sanitaire - Cuisine",
@@ -327,13 +316,12 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#4F6367",
     crossColor: "#EDF4DB",
-    duration: "1-2 semaines",
-    price: "À partir de 800€/point"
+    duration: "1-2 semaines"
   },
   "petits-travaux": {
     title: "Petits travaux",
     description: "Bricolage, réparations et aménagements du quotidien",
-    longDescription: "Service de petits travaux pour tous vos besoins du quotidien. Réparations, aménagements, bricolage, entretien... Intervention rapide par nos artisans polyvalents. Devis gratuit, tarifs transparents, satisfaction garantie pour tous vos projets ponctuels.",
+    longDescription: "Service de petits travaux pour tous vos besoins du quotidien. Réparations, aménagements, bricolage, entretien... Intervention rapide par nos artisans polyvalents, avec un accompagnement clair et adapté à vos projets ponctuels.",
     images: [
       "https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg",
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
@@ -346,11 +334,11 @@ const servicesData: Record<string, ServiceDetail> = {
       "Fixations et accrochages",
       "Entretien courant",
       "Intervention rapide",
-      "Tarifs transparents"
+      "Accompagnement clair"
     ],
     process: [
       "Diagnostic des besoins",
-      "Devis gratuit immédiat",
+      "Évaluation rapide",
       "Planification intervention",
       "Réalisation des travaux",
       "Vérification du résultat",
@@ -358,8 +346,7 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#7D9395",
     crossColor: "#EDF4DB",
-    duration: "1-3 jours",
-    price: "À partir de 45€/heure"
+    duration: "1-3 jours"
   },
   "demenagement-nettoyage": {
     title: "Déménagement et nettoyage",
@@ -389,8 +376,7 @@ const servicesData: Record<string, ServiceDetail> = {
     ],
     mainColor: "#EC6B60",
     crossColor: "#B8D8D8",
-    duration: "1-3 jours",
-    price: "À partir de 80€/m³"
+    duration: "1-3 jours"
   }
 };
 
@@ -534,13 +520,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                         <span className="text-sm">{service.duration}</span>
                       </div>
                     </div>
-                    <div className="flex items-center">
-                      <span className="text-xl mr-3">💰</span>
-                      <div>
-                        <span className="font-medium block">Tarif</span>
-                        <span className="text-sm">{service.price}</span>
-                      </div>
-                    </div>
                   </div>
                 </div>
 
@@ -550,22 +529,15 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                     Intéressé par ce service ?
                   </h4>
                   <p className="mb-6 text-gray-300">
-                    Contactez-nous pour obtenir un devis personnalisé et gratuit.
+                    Contactez-nous pour discuter de votre projet et de vos besoins.
                   </p>
                   <div className="space-y-3">
-                    {/* <Link 
-                      href="/contact"
-                      className="flex items-center justify-center w-full py-3 px-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-colors"
-                    >
-                      <Mail className="w-5 h-5 mr-2" />
-                      Demander un devis
-                    </Link> */}
                     <NavigateToButton 
                         targetSection="contact"
                         offsetY={-100}
                         className="!w-full"
                     >
-                      Demander un devis
+                      Nous contacter
                     </NavigateToButton>
 
                     <a 

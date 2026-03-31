@@ -31,7 +31,7 @@ export default function Footer() {
     }
   };
 
-  const handleDevisClick = () => {
+  const handleContactClick = () => {
     handleNavigationClick('contact');
   };
 
@@ -194,10 +194,10 @@ export default function Footer() {
               {/* CTA Button */}
               <div className="flex justify-start">
                 <button
-                  onClick={handleDevisClick}
+                  onClick={handleContactClick}
                   className="inline-flex items-center px-6 py-3 bg-mainYellow text-[#2f2912] font-semibold rounded-full hover:bg-darkBlue hover:text-white transition-all duration-300 group"
                 >
-                  Devis gratuit
+                  Nous contacter
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
               </div>
@@ -212,7 +212,18 @@ export default function Footer() {
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-mainYellow text-sm">
-              © 2025 Savoir Faire Swiss SA. Tous droits réservés.
+              © 2026 Savoir Faire Swiss SA. Tous droits réservés.
+            </div>
+            <div className="text-mainYellow text-sm text-center md:text-right">
+              Développé par{" "}
+              <a
+                href="https://www.mathiasreichen.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-clearBlue transition-colors duration-300"
+              >
+                Mathias Reichen
+              </a>
             </div>
             {/* <div className="flex space-x-6 text-sm">
               <Link 

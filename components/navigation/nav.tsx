@@ -161,7 +161,12 @@ export default function Nav() {
 
           <button onClick={() => handleNavigationClick('a-propos')} className="text-lg hover:text-gray-600 globalHover uppercase">À propos</button>
           <button onClick={() => handleNavigationClick('contact')} className="text-lg hover:text-gray-600 globalHover uppercase">Contact</button>
-          <button className="ml-10 w-44 p-2 rounded-full bg-darkBlue text-mainYellow font-semibold">Devis gratuit</button>
+          <button
+            onClick={() => handleNavigationClick('contact')}
+            className="ml-10 w-52 p-2 rounded-full bg-darkBlue text-mainYellow font-semibold"
+          >
+            Demander un devis
+          </button>
 
         </div>
       </div>
@@ -230,13 +235,6 @@ export default function Nav() {
             ))}
           </div>
         </div>
-
-        {/* <div className="flex flex-col gap-y-4 justify-center items-center w-full mt-2">
-          <button onClick={() => { handleNavigationClick('contact'); setIsOpen(false); }} className="w-full h-14  bg-darkBlue text-white text-xl font-bold rounded-lg">
-            Devis gratuit
-          </button>
-        </div> */}
-
 
       </motion.div>
     </nav>

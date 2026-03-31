@@ -119,7 +119,7 @@ export default function About() {
                     whileHover="hover"
                     whileTap="tap"
                 >
-                    Devis gratuit
+                    Nous contacter
                     <motion.div
                         variants={arrowHoverVariants}
                         transition={{ type: "spring", stiffness: 300 }}
