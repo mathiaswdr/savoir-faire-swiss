@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+const siteUrl = "https://www.lesavoirfaireswiss.ch";
+
 export const siteMetadata: Metadata = {
   title: {
     default: "Savoir Faire Swiss - Entreprise de Construction & Rénovation en Suisse Romande",
@@ -54,7 +56,7 @@ export const siteMetadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_CH",
-    url: "https://savoirfaireswiss.com",
+    url: siteUrl,
     siteName: "Savoir Faire Swiss",
     title: "Savoir Faire Swiss - Entreprise de Construction & Rénovation en Suisse Romande",
     description: "Votre partenaire de confiance pour tous vos projets de construction et rénovation en Suisse Romande. Peinture, isolation, plâtrerie et recyclage.",
@@ -82,9 +84,9 @@ export const siteMetadata: Metadata = {
     creator: "@savoirfaireswiss",
   },
   alternates: {
-    canonical: "https://savoirfaireswiss.com",
+    canonical: siteUrl,
     languages: {
-      'fr-CH': 'https://savoirfaireswiss.com',
+      "fr-CH": siteUrl,
     },
   },
   verification: {
@@ -99,7 +101,7 @@ export const siteMetadata: Metadata = {
     address: true,
     telephone: true,
   },
-  metadataBase: new URL("https://savoirfaireswiss.com"),
+  metadataBase: new URL(siteUrl),
   other: {
     // Schema.org pour le référencement local
     "geo.region": "CH-VD",

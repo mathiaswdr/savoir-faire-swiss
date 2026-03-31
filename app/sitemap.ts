@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getAllProjectSlugs } from '@/lib/projects-data'
 
-const baseUrl = 'https://savoirfaireswiss.com'
+const baseUrl = 'https://www.lesavoirfaireswiss.ch'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Get all project slugs

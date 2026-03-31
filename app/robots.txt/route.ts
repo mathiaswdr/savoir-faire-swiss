@@ -19,7 +19,7 @@ Allow: /sitemap-*.xml
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://savoirfaireswiss.com/sitemap.xml
+Sitemap: https://www.lesavoirfaireswiss.ch/sitemap.xml
 
 # Specific rules for search engines
 User-agent: Googlebot
