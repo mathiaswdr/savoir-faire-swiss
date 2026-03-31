@@ -95,8 +95,8 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-screen bg-clearBlue h-32 flex items-center justify-center px-8 z-50">
-      <div className="flex items-end justify-between gap-x-8 w-full max-w-screen-xl">
+    <nav className="fixed top-0 left-0 w-screen bg-clearBlue h-28 flex items-center justify-center px-8 z-[100] font-switzer">
+      <div className="flex items-end justify-between gap-x-8 w-full max-w-screen-2xl">
          {/* <h1 className="text-2xl font-bold">Logo</h1> */}
         {/* <div className="w-[180px] sm:w-[270px]"> */}
         <Link href={"/"} onClick={() => setIsOpen(false)}>
@@ -161,6 +161,8 @@ export default function Nav() {
 
           <button onClick={() => handleNavigationClick('a-propos')} className="text-lg hover:text-gray-600 globalHover uppercase">À propos</button>
           <button onClick={() => handleNavigationClick('contact')} className="text-lg hover:text-gray-600 globalHover uppercase">Contact</button>
+          <button className="ml-10 w-44 p-2 rounded-full bg-darkBlue text-mainYellow font-semibold">Devis gratuit</button>
+
         </div>
       </div>
 
@@ -186,7 +188,7 @@ export default function Nav() {
         initial={{x: "-100%"}}
         animate={isOpen ? {x: 0} : {x: "-100%"}}
         transition={{type: "spring", stiffness: 300, damping: 30}}
-        className="flex md:hidden fixed top-32 left-0 w-full px-8 h-screen bg-white flex-col items-start gap-y-6 pt-6"
+        className="flex md:hidden fixed top-28 left-0 w-full px-8 h-screen bg-white flex-col items-start gap-y-6 pt-6"
       >
         <button onClick={() => { handleNavigationClick('/'); setIsOpen(false); }} className="text-xl hover:text-gray-600 globalHover text-left">Accueil</button>
         <button onClick={() => { handleNavigationClick('nos-realisations'); setIsOpen(false); }} className="text-xl hover:text-gray-600 globalHover text-left">Nos réalisations</button>

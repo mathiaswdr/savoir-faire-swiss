@@ -7,12 +7,23 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { scrollToSection } from "@/utils/tools";
 
+const buttonHoverVariants = {
+  hover: { scale: 1.05, backgroundColor: "#7D9395", color: "#ffffff" },
+  tap: { scale: 0.95 },
+};
+
+const arrowHoverVariants = {
+  initial: { x: 0 },
+  hover: { x: 8 },
+};
+
 export default function About() {
   return (
-    <section id="a-propos" className="flex flex-col items-center justify-center min-h-[50dvh] py-16 md:py-20 lg:py-24 w-full px-4 sm:px-6 lg:px-8">
+    <section id="a-propos" className="flex flex-col items-center justify-center min-h-[50dvh] py-16 md:py-20 lg:py-4 w-full px-4 sm:px-6 lg:px-8">
         <motion.div 
             className="w-full max-w-screen-2xl flex flex-col lg:flex-row gap-8 lg:gap-12 lg:justify-between lg:items-center"
-            initial={{ opacity: 0, y: 50 }}
+            // initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -60,43 +71,61 @@ export default function About() {
                 // transition={{ duration: 0.8, delay: 0.4 }}
             >
                 <motion.button
+                    variants={buttonHoverVariants}
                     onClick={() => scrollToSection('nos-realisations', -150)}
-                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-clearBlue text-black font-semibold rounded-lg  text-base sm:text-lg"
+                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-clearBlue text-black font-semibold rounded-full  text-base sm:text-lg"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                    whileHover={{ scale: 1.02, backgroundColor: "#7D9395", color: "#ffffff" }}
-                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.5, type: "spring" }}
+                    whileHover="hover"
+                    whileTap="tap"
                 >
                     Avant / après
-                    <ArrowRight className="ml-2 w-5 h-5 globalHover group-hover:translate-x-2" />
+                    <motion.div
+                        variants={arrowHoverVariants}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <ArrowRight className="ml-2 w-5 h-5" />
+                    </motion.div>
                 </motion.button>
                 <motion.button
+                    variants={buttonHoverVariants}
                     onClick={() => scrollToSection('nos-services', -150)}
-                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-mainRed text-black font-semibold rounded-lg  text-base sm:text-lg"
+                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-mainRed text-black font-semibold rounded-full  text-base sm:text-lg"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.7 }}
-                    whileHover={{ scale: 1.02, backgroundColor: "#7D9395", color: "#ffffff" }}
-                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.5, type: "spring" }}
+                    whileHover="hover"
+                    whileTap="tap"
                 >
                     Nos services
-                    <ArrowRight className="ml-2 w-5 h-5 globalHover group-hover:translate-x-2" />
+                    <motion.div
+                        variants={arrowHoverVariants}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <ArrowRight className="ml-2 w-5 h-5" />
+                    </motion.div>
                 </motion.button>
                 <motion.button
+                    variants={buttonHoverVariants}
                     onClick={() => scrollToSection('contact', -150)}
-                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-mainYellow text-black font-semibold rounded-lg  text-base sm:text-lg"
+                    className="w-full sm:w-64 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-mainYellow text-black font-semibold rounded-full  text-base sm:text-lg"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.8 }}
-                    whileHover={{ scale: 1.02, backgroundColor: "#7D9395", color: "#ffffff" }}
-                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.5 }}
+                    whileHover="hover"
+                    whileTap="tap"
                 >
                     Devis gratuit
-                    <ArrowRight className="ml-2 w-5 h-5 globalHover group-hover:translate-x-2" />
+                    <motion.div
+                        variants={arrowHoverVariants}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <ArrowRight className="ml-2 w-5 h-5" />
+                    </motion.div>
                 </motion.button>
             </motion.div>
 

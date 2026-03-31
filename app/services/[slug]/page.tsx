@@ -139,10 +139,258 @@ const servicesData: Record<string, ServiceDetail> = {
       "Acheminement filières agréées",
       "Remise des certificats"
     ],
-    mainColor: "#EDF4DB",
-    crossColor: "#7D9395",
+    mainColor: "#4F6367",
+    crossColor: "#EDF4DB",
     duration: "Selon chantier",
     price: "Sur devis"
+  },
+  "maconnerie": {
+    title: "Maçonnerie",
+    description: "Travaux de gros œuvre : murs porteurs, cloisons, dalles et fondations",
+    longDescription: "Nos équipes réalisent tous vos travaux de maçonnerie avec des matériaux de qualité. Construction de murs porteurs, cloisons, dalles, fondations et autres ouvrages en béton. Nous respectons scrupuleusement les normes DTU et garantissons la durabilité de nos réalisations grâce à notre expertise technique.",
+    images: [
+      "https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg",
+      "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg",
+      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg"
+    ],
+    features: [
+      "Construction de murs porteurs",
+      "Réalisation de cloisons",
+      "Coulage de dalles béton",
+      "Fondations et semelles",
+      "Travaux de rénovation",
+      "Respect des normes DTU"
+    ],
+    process: [
+      "Étude technique du projet",
+      "Préparation du terrain",
+      "Mise en place des coffrages",
+      "Coulage et ferraillage",
+      "Séchage et décoffrage",
+      "Finitions et contrôle qualité"
+    ],
+    mainColor: "#B8D8D8",
+    crossColor: "#EC6B60",
+    duration: "2-8 semaines",
+    price: "À partir de 60€/m³"
+  },
+  "carrelage": {
+    title: "Carrelage",
+    description: "Pose de carrelage, faïence et mosaïque intérieur/extérieur",
+    longDescription: "Pose professionnelle de carrelage pour sols et murs, intérieur et extérieur. Nous maîtrisons tous types de revêtements : carrelage grès cérame, faïence, mosaïque, pierre naturelle. Finitions soignées avec étanchéité parfaite des joints pour une durabilité optimale.",
+    images: [
+      "https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/4792077/pexels-photo-4792077.jpeg",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"
+    ],
+    features: [
+      "Carrelage sol et mur",
+      "Faïence salle de bain",
+      "Mosaïque décorative",
+      "Pose intérieur/extérieur",
+      "Étanchéité des joints",
+      "Finitions périphériques"
+    ],
+    process: [
+      "Préparation des supports",
+      "Traçage et calepinage",
+      "Encollage et pose",
+      "Découpes et ajustements",
+      "Jointoiement étanche",
+      "Nettoyage et protection"
+    ],
+    mainColor: "#7D9395",
+    crossColor: "#EDF4DB",
+    duration: "1-3 semaines",
+    price: "À partir de 45€/m²"
+  },
+  "electricite": {
+    title: "Électricité",
+    description: "Installation électrique complète, mise en sécurité et dépannage",
+    longDescription: "Installation électrique complète conforme aux normes NF C 15-100. Mise en sécurité des installations existantes, création de nouveaux circuits, dépannage d'urgence. Nos électriciens qualifiés garantissent la sécurité de votre installation avec des matériaux certifiés.",
+    images: [
+      "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg",
+      "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg",
+      "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=600&fit=crop"
+    ],
+    features: [
+      "Installation complète",
+      "Mise en sécurité",
+      "Dépannage d'urgence",
+      "Conformité NF C 15-100",
+      "Matériaux certifiés",
+      "Consuel et attestation"
+    ],
+    process: [
+      "Diagnostic électrique",
+      "Conception du schéma",
+      "Pose des câblages",
+      "Installation des équipements",
+      "Tests et vérifications",
+      "Remise du Consuel"
+    ],
+    mainColor: "#EC6B60",
+    crossColor: "#B8D8D8",
+    duration: "1-2 semaines",
+    price: "À partir de 80€/point"
+  },
+  "demolition": {
+    title: "Démolition",
+    description: "Déconstruction sélective et désamiantage sécurisé",
+    longDescription: "Démolition contrôlée et déconstruction sélective avec respect des protocoles de sécurité. Nous intervenons sur tous types de structures en respectant les normes environnementales. Désamiantage certifié avec évacuation sécurisée vers filières spécialisées.",
+    images: [
+      "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg",
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg",
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop"
+    ],
+    features: [
+      "Démolition contrôlée",
+      "Déconstruction sélective",
+      "Désamiantage certifié",
+      "Évacuation sécurisée",
+      "Respect environnemental",
+      "Nettoyage du site"
+    ],
+    process: [
+      "Diagnostic amiante/plomb",
+      "Demandes administratives",
+      "Sécurisation du chantier",
+      "Démolition progressive",
+      "Tri et évacuation",
+      "Remise en état du site"
+    ],
+    mainColor: "#4F6367",
+    crossColor: "#EDF4DB",
+    duration: "1-4 semaines",
+    price: "À partir de 25€/m³"
+  },
+  "revetements-de-sols": {
+    title: "Revêtements - Parquets",
+    description: "Pose de parquets, stratifiés et revêtements souples",
+    longDescription: "Pose professionnelle de tous types de revêtements de sol : parquets massifs, contrecollés, stratifiés, PVC, linoléum. Préparation minutieuse des supports, pose avec finitions périphériques et plinthes. Conseils personnalisés pour le choix du revêtement adapté à vos besoins.",
+    images: [
+      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg",
+      "https://images.unsplash.com/photo-1560184897-67f4a3f9a7fa?w=800&h=600&fit=crop"
+    ],
+    features: [
+      "Parquets massifs et contrecollés",
+      "Stratifiés haute qualité",
+      "Revêtements souples PVC",
+      "Préparation des supports",
+      "Finitions et plinthes",
+      "Conseils personnalisés"
+    ],
+    process: [
+      "Diagnostic du support",
+      "Préparation et ragréage",
+      "Pose de sous-couche",
+      "Installation du revêtement",
+      "Découpes et ajustements",
+      "Pose des finitions"
+    ],
+    mainColor: "#EDF4DB",
+    crossColor: "#7D9395",
+    duration: "3-10 jours",
+    price: "À partir de 35€/m²"
+  },
+  "sanitaire-cuisine": {
+    title: "Sanitaire - Cuisine",
+    description: "Installation complète sanitaires et cuisines",
+    longDescription: "Installation complète de sanitaires et cuisines clés en main. Plomberie, raccordements, pose d'équipements sanitaires et électroménager. Mise en service avec vérification de tous les raccordements. Intervention rapide avec matériaux de qualité pour un résultat durable.",
+    images: [
+      "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/1910472/pexels-photo-1910472.jpeg",
+      "https://images.unsplash.com/photo-1556909185-4f72472b5aa4?w=800&h=600&fit=crop"
+    ],
+    features: [
+      "Installation sanitaires",
+      "Aménagement cuisines",
+      "Plomberie complète",
+      "Raccordements gaz/électricité",
+      "Pose électroménager",
+      "Mise en service"
+    ],
+    process: [
+      "Étude des besoins",
+      "Préparation des arrivées",
+      "Installation plomberie",
+      "Pose des équipements",
+      "Raccordements et tests",
+      "Mise en service finale"
+    ],
+    mainColor: "#4F6367",
+    crossColor: "#EDF4DB",
+    duration: "1-2 semaines",
+    price: "À partir de 800€/point"
+  },
+  "petits-travaux": {
+    title: "Petits travaux",
+    description: "Bricolage, réparations et aménagements du quotidien",
+    longDescription: "Service de petits travaux pour tous vos besoins du quotidien. Réparations, aménagements, bricolage, entretien... Intervention rapide par nos artisans polyvalents. Devis gratuit, tarifs transparents, satisfaction garantie pour tous vos projets ponctuels.",
+    images: [
+      "https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/416978/pexels-photo-416978.jpeg",
+      "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?w=800&h=600&fit=crop"
+    ],
+    features: [
+      "Réparations diverses",
+      "Montage de meubles",
+      "Fixations et accrochages",
+      "Entretien courant",
+      "Intervention rapide",
+      "Tarifs transparents"
+    ],
+    process: [
+      "Diagnostic des besoins",
+      "Devis gratuit immédiat",
+      "Planification intervention",
+      "Réalisation des travaux",
+      "Vérification du résultat",
+      "Nettoyage et finitions"
+    ],
+    mainColor: "#7D9395",
+    crossColor: "#EDF4DB",
+    duration: "1-3 jours",
+    price: "À partir de 45€/heure"
+  },
+  "demenagement-nettoyage": {
+    title: "Déménagement et nettoyage",
+    description: "Service complet de déménagement et nettoyage fin de chantier",
+    longDescription: "Service complet de déménagement professionnel et nettoyage fin de chantier. Emballage soigné, transport sécurisé, remise en état des locaux. Équipe expérimentée avec matériel professionnel. Nettoyage approfondi post-travaux avec produits adaptés.",
+    images: [
+      "https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg",
+      "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/4099141/pexels-photo-4099141.jpeg",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop"
+    ],
+    features: [
+      "Déménagement complet",
+      "Emballage professionnel",
+      "Transport sécurisé",
+      "Nettoyage fin de chantier",
+      "Remise en état",
+      "Évacuation déchets"
+    ],
+    process: [
+      "Évaluation du volume",
+      "Emballage et protection",
+      "Chargement sécurisé",
+      "Transport et déchargement",
+      "Nettoyage approfondi",
+      "Réception et contrôle"
+    ],
+    mainColor: "#EC6B60",
+    crossColor: "#B8D8D8",
+    duration: "1-3 jours",
+    price: "À partir de 80€/m³"
   }
 };
 
@@ -161,7 +409,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   }
 
   return (
-    <main className="pt-32">
+    <main className="pt-28">
       {/* Hero Section */}
       <section className="relative h-[620px] sm:h-[700px] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">

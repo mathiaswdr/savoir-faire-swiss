@@ -57,6 +57,30 @@ export default function Services() {
                     slug="recyclage"
                 />
             </motion.div>
+            {/* <motion.div 
+                className="w-full flex flex-col lg:flex-row  lg:h-[45dvh] lg:justify-between items-stretch lg:items-start lg:mt-0"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+            >
+                <ServiceCard
+                    title="Isolation"
+                    description="Améliorez le confort thermique et acoustique de vos bâtiments. Isolation des combles, murs, planchers et toitures (ITI/ITE), traitement des ponts thermiques, pose de pare-vapeur et membranes d'étanchéité à l'air. Matériaux adaptés (laine minérale, fibre de bois, PIR, ouate). Chantier protégé, finitions soignées, économies d'énergie durables."
+                    style="bg-mainRed"
+                    crossColor="#B8D8D8"
+                    mainColor="#EC6B60"
+                    slug="isolation"
+                />
+                <ServiceCard
+                    title="Recyclage"
+                    description="Tri et évacuation responsables des déchets de chantier : inertes, bois, ferrailles, cartons/plastiques, plâtre, D3E et déchets spécifiques. Bennes dédiées, acheminement vers filières agréées et site laissé propre avec justificatifs de prise en charge."
+                    style="bg-mainYellow"
+                    crossColor="#7D9395"
+                    mainColor="#EDF4DB"
+                    slug="recyclage"
+                />
+            </motion.div> */}
         </section>
     )
 } 

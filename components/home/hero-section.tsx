@@ -16,6 +16,23 @@ const carouselImages = [
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const buttonVariants = {
+    initial: { scale: 1 },
+    hover: { scale: 1.05, backgroundColor: "#e0efb9", color: "#2f2912" },
+    tap: { scale: 0.95 },
+  };
+
+  const secondaryButtonVariants = {
+    initial: { scale: 1 },
+    hover: { scale: 1.05, backgroundColor: "#ffffff", color: "#2f2912"  },
+    tap: { scale: 0.95 },
+  };
+
+  const arrowVariants = {
+    initial: { x: 0 },
+    hover: { x: 8 },
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
@@ -58,46 +75,61 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-20 h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto w-full">
+        <div className="max-w-screen-2xl mx-auto w-full">
           <motion.div 
             className="text-white text-center lg:text-left"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-4xl font-switzer sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
-              <span className="block">
+            <h1 className="text-4xl font-switzer sm:text-5xl md:text-6xl lg:text-6xl font-bold mb-4 leading-tight">
+              <span className="block uppercase">
                 Vos travaux,
               </span>
-              <span className="block mt-0">
-                notre <span className="font-switzer italic text-clearBlue">savoir-faire</span>
+              <span className="block mt-0 uppercase">
+                notre <span className="font-switzer text-[#e0efb9] italic uppercase">savoir-faire</span>
               </span>
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto lg:mx-0 opacity-90">
+            <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto lg:mx-0 opacity-90 ">
               Votre partenaire de confiance pour tous vos projets de construction
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center lg:justify-start">
               <motion.button
                 onClick={() => scrollToSection('a-propos', -125)}
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#B8D8D8] text-black font-semibold rounded-lg transition-all duration-300 text-lg group"
-                whileHover={{ scale: 1.05, backgroundColor: "#7D9395", color: "#ffffff" }}
-                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center px-8 w-60 py-3 bg-mainYellow border-2 border-mainYellow text-darkGray font-semibold rounded-full text-lg group"
+                variants={buttonVariants}
+                initial="initial"
+                whileHover="hover"   
+                whileTap="tap"
               >
                 À propos
-                <ArrowRight className="ml-2 w-5 h-5 globalHover group-hover:translate-x-2" />
+                <motion.div
+                  variants={arrowVariants}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <ArrowRight className="ml-2 w-5 h-5 " />
+                </motion.div>
               </motion.button>
               
               <motion.button
                 onClick={() => scrollToSection('nos-services', -125)}
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg transition-all duration-300 text-lg group"
-                whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#000000" }}
-                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center px-8 w-60 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-full text-lg group"
+                // whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#000000" }}
+                variants={secondaryButtonVariants}
+                initial="initial"
+                whileHover="hover"
+                whileTap="tap"
               >
                 Nos services
-                <ArrowRight className="ml-2 w-5 h-5 globalHover group-hover:translate-x-2" />
+                <motion.div
+                  variants={arrowVariants}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <ArrowRight className="ml-2 w-5 h-5 " />
+                </motion.div>
               </motion.button>
             </div>
           </motion.div>

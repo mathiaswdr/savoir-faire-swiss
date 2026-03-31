@@ -64,9 +64,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full lg:max-w-bigScreen min-h-[95dvh] lg:min-h-[100dvh] mt-14 xl:mt-32 flex flex-col lg:flex-row">
+    <section id="contact" className="w-full lg:max-w-screen-2xl min-h-[95dvh] lg:min-h-[100dvh] mt-14 xl:mt-32 flex flex-col lg:flex-row lg:justify-between">
       {/* Left Side - Contact Form */}
-      <div className="w-full min-h-[80dvh] py-6 max-h-[800px] lg:w-1/2 px-4 lg:px-10 flex justify-start items-start flex-col">
+      <div className="w-full min-h-[80dvh] py-6 max-h-[800px] lg:w-1/2 px-4 lg:px-8 flex justify-start items-start flex-col">
         <h2 className="font-switzer text-4xl sm:text-5xl lg:text-6xl font-semibold mb-8">
           Nous contacter
         </h2>
