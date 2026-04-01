@@ -215,14 +215,14 @@ export default function Footer() {
               © 2026 Savoir Faire Swiss SA. Tous droits réservés.
             </div>
             <div className="text-mainYellow text-sm text-center md:text-right">
-              Développé par{" "}
+              Web design et développement par{" "}
               <a
-                href="https://www.mathiasreichen.com/"
+                href="https://www.meelki.ch"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-4 hover:text-clearBlue transition-colors duration-300"
               >
-                Mathias Reichen
+                Meelki Studio
               </a>
             </div>
             {/* <div className="flex space-x-6 text-sm">
