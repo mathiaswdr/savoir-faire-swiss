@@ -8,9 +8,10 @@ import { motion } from "framer-motion";
 import { scrollToSection } from "@/utils/tools";
 
 const carouselImages = [
-  "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop",
-  "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1920&h=1080&fit=crop",
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&h=1080&fit=crop",
+  "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550277/IMG-20250930-WA0068_hlhytv.jpg",
+  "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550439/IMG-20260307-WA0050_vk2owl.jpg",
+  "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775571013/IMG-20260307-WA0321_ezgm9o.jpg",
+  "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550314/IMG-20250930-WA0067_pnlhoe.jpg",
 ];
 
 export default function HeroSection() {
@@ -71,7 +72,7 @@ export default function HeroSection() {
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10" />
+      <div className="absolute inset-0 bg-black/35 z-10" />
 
       {/* Content */}
       <div className="relative z-20 h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
