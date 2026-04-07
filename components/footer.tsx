@@ -36,7 +36,7 @@ export default function Footer() {
   };
 
   const handleEmailClick = async () => {
-    const email = "info@savoirfaireswiss.com";
+    const email = "info@lesavoirfaireswiss.ch";
     try {
       await navigator.clipboard.writeText(email);
       toast.success("Email copié dans le presse-papier !");
@@ -186,7 +186,7 @@ export default function Footer() {
                     onClick={handleEmailClick}
                     className="text-mainYellow hover:text-clearBlue transition-colors duration-300 text-left"
                   >
-                    info@savoirfaireswiss.com
+                    info@lesavoirfaireswiss.ch
                   </button>
                 </div>
               </div>

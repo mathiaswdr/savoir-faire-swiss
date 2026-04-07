@@ -28,196 +28,122 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    slug: "renovation-cuisine-moderne-geneve",
-    title: "Rénovation Cuisine Moderne",
+    slug: "renovation-sol-murs-geneve",
+    title: "Rénovation de sol et murs",
     location: "Genève",
     year: 2023,
-    category: "Rénovation",
+    category: "Rénovation intérieure",
     duration: "3 mois",
     budget: "25 000 - 35 000 CHF",
-    beforeImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop",
-    afterImage: "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg",
-    description: "Transformation complète d'une cuisine datant des années 80 en un espace moderne et fonctionnel. Ce projet a impliqué une refonte totale de l'agencement pour optimiser l'espace et créer un lieu de vie convivial.",
+    beforeImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775568176/renovation-1_tzpnzr.jpg",
+    afterImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775549950/20250201_151725_je9amj.jpg",
+    description: "Rénovation intérieure avec reprise complète des sols et des murs pour redonner un aspect propre, durable et soigné à l'espace.",
     challenges: [
-      "Espace restreint nécessitant une optimisation maximale",
-      "Plomberie et électricité à rénover entièrement",
-      "Conservation de certains éléments structurels",
-      "Respect des normes modernes tout en gardant le charme de l'appartement"
+      "Préparation des supports avant les finitions",
+      "Reprise des surfaces abîmées",
+      "Coordination des travaux de sol et de murs",
+      "Obtention d'un rendu homogène sur l'ensemble de la pièce"
     ],
     solutions: [
-      "Création d'un îlot central multifonctionnel",
-      "Installation d'un éclairage LED intégré",
-      "Choix de matériaux durables et faciles d'entretien",
-      "Optimisation du rangement avec des solutions sur-mesure"
+      "Préparation et correction des supports",
+      "Rénovation du revêtement de sol",
+      "Remise en état des murs",
+      "Finitions propres et adaptées à l'usage quotidien"
     ],
-    works: ["Rénovation", "Peinture", "Plomberie", "Électricité"],
-    gallery: [
-      {
-        url: "https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg",
-        alt: "Vue d'ensemble de la nouvelle cuisine",
-        caption: "Vue d'ensemble de la nouvelle cuisine avec l'îlot central"
-      },
-      {
-        url: "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg",
-        alt: "Détail des finitions",
-        caption: "Détail des finitions et de l'éclairage intégré"
-      },
-
-    ],
-    testimonial: {
-      text: "Nous sommes ravis du résultat ! L'équipe de Savoir Faire Swiss a su transformer notre ancienne cuisine en un espace moderne et fonctionnel. Le travail est impeccable et les délais ont été respectés.",
-      author: "Marie Dubois",
-      role: "Propriétaire"
-    }
+    works: ["Rénovation", "Sol", "Murs", "Finitions"],
+    gallery: [],
   },
   {
     id: "2",
-    slug: "renovation-salle-bain-lausanne",
-    title: "Rénovation Salle de Bain",
+    slug: "renovation-murs-faux-plafond-led-lausanne",
+    title: "Rénovation murs et faux plafond LED",
     location: "Lausanne",
     year: 2023,
-    category: "Rénovation",
+    category: "Rénovation intérieure",
     duration: "2 mois",
     budget: "15 000 - 25 000 CHF",
-    beforeImage: "https://images.pexels.com/photos/804392/pexels-photo-804392.jpeg",
-    afterImage: "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1920&h=1080&fit=crop",
-    description: "Modernisation complète d'une salle de bain avec création d'un espace spa privé. Focus sur les matériaux nobles et les finitions de qualité pour créer une atmosphère relaxante.",
+    beforeImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550049/IMG-20250813-WA0039_gagstk.jpg",
+    afterImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550046/IMG-20250822-WA0036_ceunur.jpg",
+    description: "Rénovation des murs et du plafond avec création d'un faux plafond en plaques de plâtre, gorge lumineuse LED et éclairage indirect pour un rendu moderne et soigné.",
     challenges: [
-      "Évacuation et ventilation complexes",
-      "Étanchéité parfaite requise",
-      "Intégration de technologies modernes",
-      "Optimisation de l'éclairage naturel"
+      "Préparation des murs et du plafond avant les finitions",
+      "Création d'un faux plafond avec renfoncement",
+      "Intégration discrète des bandes LED",
+      "Obtention d'un éclairage indirect régulier"
     ],
     solutions: [
-      "Installation d'une douche à l'italienne",
-      "Carrelage grand format pour agrandir l'espace",
-      "Éclairage intelligent avec variateur",
-      "Ventilation mécanique contrôlée"
+      "Réalisation d'un faux plafond en plaques de plâtre",
+      "Création d'une gorge lumineuse LED",
+      "Reprise et finition des murs",
+      "Mise en valeur de la pièce par un éclairage indirect"
     ],
-    works: ["Rénovation", "Carrelage", "Plomberie", "Électricité"],
-    gallery: [
-      {
-        url: "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&h=600&fit=crop",
-        alt: "Nouvelle salle de bain moderne",
-        caption: "Vue d'ensemble de la salle de bain rénovée"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&h=600&fit=crop",
-        alt: "Douche à l'italienne",
-        caption: "Douche à l'italienne avec carrelage grand format"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&h=600&fit=crop",
-        alt: "Éclairage moderne",
-        caption: "Éclairage LED intégré au miroir"
-      }
-    ],
-    testimonial: {
-      text: "Un travail remarquable ! Notre salle de bain est maintenant un véritable petit spa. L'attention aux détails et la qualité des finitions sont exceptionnelles.",
-      author: "Pierre Martin",
-      role: "Propriétaire"
-    }
+    works: ["Rénovation", "Murs", "Faux plafond", "Gorge LED"],
+    gallery: [],
   },
   {
     id: "3",
-    slug: "extension-maison-montreux",
-    title: "Extension de Maison",
+    slug: "renovation-plafond-appartement-montreux",
+    title: "Rénovation plafond et appartement",
     location: "Montreux",
     year: 2022,
-    category: "Extension",
+    category: "Rénovation d'appartement",
     duration: "6 mois",
     budget: "80 000 - 120 000 CHF",
-    beforeImage: "https://images.pexels.com/photos/11427524/pexels-photo-11427524.jpeg",
-    afterImage: "https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg",
-    description: "Agrandissement d'une maison familiale avec création d'un espace de vie ouvert donnant sur le jardin. Intégration harmonieuse avec l'architecture existante.",
+    beforeImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550282/IMG-20260307-WA0026_c4kqpg.jpg",
+    afterImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550277/IMG-20250930-WA0068_hlhytv.jpg",
+    description: "Rénovation d'appartement avec reprise du plafond, des surfaces et des finitions pour transformer l'espace et obtenir un rendu propre, moderne et harmonieux.",
     challenges: [
-      "Respect de l'architecture existante",
-      "Fondations sur terrain en pente",
-      "Grandes ouvertures vitrées",
-      "Isolation thermique optimale"
+      "Préparation du plafond et des surfaces existantes",
+      "Reprise des zones abîmées",
+      "Coordination des travaux dans l'appartement",
+      "Obtention d'un rendu homogène dans l'ensemble de la pièce"
     ],
     solutions: [
-      "Extension avec ossature bois moderne",
-      "Baies vitrées coulissantes panoramiques",
-      "Toiture végétalisée pour l'isolation",
-      "Terrasse en continuité avec le salon"
+      "Remise en état des supports",
+      "Rénovation du plafond",
+      "Application de finitions adaptées",
+      "Travail soigné des angles et raccords"
     ],
-    works: ["Extension", "Gros œuvre", "Charpente", "Isolation"],
+    works: ["Rénovation", "Appartement", "Plafond", "Finitions"],
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
-        alt: "Extension moderne",
-        caption: "Vue extérieure de l'extension avec grandes baies vitrées"
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550317/IMG-20250930-WA0071_nodpql.jpg",
+        alt: "Détail de la rénovation intérieure",
+        caption: "Détail des finitions"
       },
       {
-        url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
-        alt: "Espace de vie ouvert",
-        caption: "Nouvel espace de vie ouvert sur le jardin"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
-        alt: "Terrasse intégrée",
-        caption: "Terrasse en continuité avec le salon"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
-        alt: "Charpente moderne",
-        caption: "Charpente bois apparente dans le nouveau salon"
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550314/IMG-20250930-WA0067_pnlhoe.jpg",
+        alt: "Rendu final de la rénovation intérieure",
+        caption: "Rendu final"
       }
     ],
-    testimonial: {
-      text: "L'extension s'intègre parfaitement à notre maison existante. L'équipe a su respecter notre budget et nos délais tout en nous proposant des solutions innovantes.",
-      author: "Sophie Leroy",
-      role: "Propriétaire"
-    }
   },
   {
     id: "4",
-    slug: "renovation-appartement-vevey",
-    title: "Rénovation d'Appartement",
+    slug: "renovation-complete-plafond-led-vevey",
+    title: "Rénovation complète et plafond LED",
     location: "Vevey",
     year: 2023,
     category: "Rénovation complète",
     duration: "4 mois",
     budget: "45 000 - 60 000 CHF",
-    beforeImage: "https://images.pexels.com/photos/3562689/pexels-photo-3562689.jpeg",
-    afterImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop",
-    description: "Rénovation complète d'un appartement 3.5 pièces avec redistribution des espaces pour créer un loft moderne et lumineux au cœur de Vevey.",
+    beforeImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775570028/IMG-20260307-WA0032_1_a7jjfy.jpg",
+    afterImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550421/IMG-20260307-WA0048_mpqln2.jpg",
+    description: "Rénovation complète avec reprise des surfaces, finitions intérieures et création d'un plafond avec gorge lumineuse LED pour un rendu moderne et lumineux.",
     challenges: [
-      "Redistribution des espaces sans toucher aux murs porteurs",
-      "Amélioration de la luminosité naturelle",
-      "Modernisation des installations",
-      "Conservation du parquet d'origine"
+      "Préparation complète de l'espace avant les finitions",
+      "Reprise des murs et du plafond",
+      "Création d'un plafond avec renfoncement",
+      "Intégration propre de l'éclairage LED indirect"
     ],
     solutions: [
-      "Ouverture entre cuisine et salon",
-      "Verrière d'intérieur pour séparer sans cloisonner",
-      "Rénovation et vitrification du parquet ancien",
-      "Installation domotique moderne"
+      "Rénovation complète des supports",
+      "Réalisation d'un plafond en plaques de plâtre",
+      "Création d'une gorge lumineuse LED",
+      "Finitions nettes et harmonisées dans toute la pièce"
     ],
-    works: ["Rénovation", "Peinture", "Finitions", "Électricité"],
-    gallery: [
-      {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
-        alt: "Salon rénové",
-        caption: "Salon ouvert avec parquet d'origine restauré"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
-        alt: "Cuisine ouverte",
-        caption: "Cuisine ouverte sur le salon"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
-        alt: "Verrière intérieure",
-        caption: "Verrière séparant la chambre du salon"
-      }
-    ],
-    testimonial: {
-      text: "Notre ancien appartement sombre est devenu un loft lumineux et moderne. Nous recommandons vivement Savoir Faire Swiss pour leur professionnalisme et leur créativité.",
-      author: "Thomas Weber",
-      role: "Propriétaire"
-    }
+    works: ["Rénovation complète", "Plafond", "Gorge LED", "Finitions"],
+    gallery: [],
   }
 ];
 

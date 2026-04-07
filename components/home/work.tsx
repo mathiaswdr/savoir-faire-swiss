@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import { ArrowRight, Cross } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 type WorkProps = {
@@ -28,6 +28,7 @@ export default function Work(props: WorkProps) {
                             alt={beforeAlt ? beforeAlt : "Image de chantier"}
                             fill
                             className="object-cover"
+                            sizes="(min-width: 1024px) 24vw, 100vw"
                             quality={80}
                         />
                     </div>
@@ -41,6 +42,7 @@ export default function Work(props: WorkProps) {
                             alt={afterAlt ? afterAlt : "Image de chantier"}
                             fill
                             className="object-cover"
+                            sizes="(min-width: 1024px) 24vw, 100vw"
                             quality={80}
                         />
                     </div>

@@ -145,10 +145,9 @@ export default function About() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    whileHover={{ scale: 1.02 }}
                 >
                     <Image 
-                        src="https://images.pexels.com/photos/8482822/pexels-photo-8482822.jpeg"
+                        src="https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550439/IMG-20260307-WA0050_vk2owl.jpg"
                         alt="Notre équipe de professionnels sur chantier"
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-300"
@@ -161,10 +160,9 @@ export default function About() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.6 }}
-                    whileHover={{ scale: 1.02 }}
                 >
                     <Image 
-                        src="https://images.pexels.com/photos/8482649/pexels-photo-8482649.jpeg"
+                        src="https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550277/IMG-20250930-WA0068_hlhytv.jpg"
                         alt="Travaux de rénovation de qualité"
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-300"

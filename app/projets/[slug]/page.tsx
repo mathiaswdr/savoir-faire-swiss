@@ -5,6 +5,7 @@ import { getProjectBySlug, getAllProjectSlugs } from '@/lib/projects-data';
 import ScrollToButton from '@/components/ui/scroll-to-button';
 import { ArrowDown } from 'lucide-react';
 import NavigateToButton from '@/components/navigation/navigate-to-button';
+import ProjectGalleryModal from '@/components/project-gallery-modal';
 
 interface ProjectPageProps {
   params: Promise<{
@@ -27,6 +28,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  const hasGallery = project.gallery.length > 0;
+  const testimonial = project.testimonial;
+  const hasTestimonial = testimonial !== undefined;
+
   return (
     <main className="min-h-screen bg-white pt-32">
       {/* Hero Section */}
@@ -36,6 +41,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           alt={project.title}
           fill
           className="object-cover"
+          sizes="100vw"
           priority
         />
         <div className="absolute inset-0 bg-black/40" />
@@ -119,6 +125,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     alt="Avant travaux"
                     fill
                     className="object-cover"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                   />
                 </div>
                 <h3 className="text-2xl font-semibold uppercase">Avant</h3>
@@ -130,6 +137,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     alt="Après travaux"
                     fill
                     className="object-cover"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                   />
                 </div>
                 <h3 className="text-2xl font-semibold uppercase">Après</h3>
@@ -178,45 +186,29 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
 
           {/* Gallery */}
-          <div className="mb-16">
-            <h2 className="text-3xl lg:text-4xl font-switzer font-bold text-center mb-12">
-              Galerie de photos
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {project.gallery.map((image, index) => (
-                <div key={index} className="group">
-                  <div className="relative h-80 rounded-lg overflow-hidden">
-                    <Image
-                      src={image.url}
-                      alt={image.alt}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  {image.caption && (
-                    <p className="text-sm text-gray-600 mt-2 text-center">
-                      {image.caption}
-                    </p>
-                  )}
-                </div>
-              ))}
+          {hasGallery ? (
+            <div className="mb-16">
+              <h2 className="text-3xl lg:text-4xl font-switzer font-bold text-center mb-12">
+                Galerie de photos
+              </h2>
+              <ProjectGalleryModal images={project.gallery} />
             </div>
-          </div>
+          ) : null}
 
           {/* Testimonial */}
-          {project.testimonial && (
+          {hasTestimonial ? (
             <div className="bg-[#EDF4DB] p-8 lg:p-12 rounded-lg text-center">
               <blockquote className="text-xl lg:text-2xl italic text-[#2f2912] mb-6">
-                "{project.testimonial.text}"
+                &ldquo;{testimonial.text}&rdquo;
               </blockquote>
               <div>
                 <p className="font-semibold text-[#2f2912]">
-                  {project.testimonial.author}
+                  {testimonial.author}
                 </p>
-                <p className="text-[#7D9395]">{project.testimonial.role}</p>
+                <p className="text-[#7D9395]">{testimonial.role}</p>
               </div>
             </div>
-          )}
+          ) : null}
         </div>
       </section>
 

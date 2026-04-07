@@ -4,13 +4,22 @@ import { notFound } from "next/navigation";
 import ScrollToButton from "@/components/ui/scroll-to-button";
 import { ArrowDown } from "lucide-react";
 import NavigateToButton from "@/components/navigation/navigate-to-button";
+import ProjectGalleryModal from "@/components/project-gallery-modal";
 
 // Types pour les services
+interface ServiceGalleryImage {
+  url: string;
+  alt: string;
+  caption?: string;
+}
+
 interface ServiceDetail {
   title: string;
   description: string;
   longDescription: string;
   images: string[];
+  gallery?: ServiceGalleryImage[];
+  hideGallery?: boolean;
   features: string[];
   process: string[];
   mainColor: string;
@@ -25,10 +34,28 @@ const servicesData: Record<string, ServiceDetail> = {
     description: "Redonnez du caractère à vos espaces avec notre service de peinture",
     longDescription: "Redonnez du caractère à vos espaces avec notre service de peinture intérieure et extérieure. Nous préparons soigneusement les supports (ponçage, rebouchage, impression), protégeons votre chantier et appliquons des peintures durables à faibles émissions. Murs, plafonds, boiseries, métal ou façades : finitions mates, velours ou satin, nuanciers RAL/NCS à la demande.",
     images: [
-      "https://images.pexels.com/photos/7218525/pexels-photo-7218525.jpeg",
+      "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550046/IMG-20250822-WA0036_ceunur.jpg",
       "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg",
       "https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg",
       "https://images.pexels.com/photos/3209045/pexels-photo-3209045.jpeg"
+    ],
+    gallery: [
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550046/IMG-20250822-WA0036_ceunur.jpg",
+        alt: "Travaux de peinture intérieure terminés"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550421/IMG-20260307-WA0048_mpqln2.jpg",
+        alt: "Finitions de peinture et rénovation intérieure"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550314/IMG-20250930-WA0067_pnlhoe.jpg",
+        alt: "Détail des finitions de peinture"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550049/IMG-20250813-WA0039_gagstk.jpg",
+        alt: "Travaux de peinture avant finitions"
+      }
     ],
     features: [
       "Peinture intérieure et extérieure",
@@ -55,10 +82,28 @@ const servicesData: Record<string, ServiceDetail> = {
     description: "Travaux de plâtrerie professionnels pour tous vos projets",
     longDescription: "Nos équipes réalisent vos travaux de plâtrerie : cloisons et doublages en plaques de plâtre, faux-plafonds, enduits et lissage, bandes et joints. Solutions thermiques et phoniques, plaques hydrofuges et coupe-feu selon les besoins. Chantier protégé, finitions nettes, délais respectés.",
     images: [
-      "https://images.pexels.com/photos/209266/pexels-photo-209266.jpeg",
+      "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775571013/IMG-20260307-WA0321_ezgm9o.jpg",
       "https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=800&h=600&fit=crop",
       "https://images.pexels.com/photos/209266/pexels-photo-209266.jpeg",
       "https://images.pexels.com/photos/7931/pexels-photo-7931.jpg",
+    ],
+    gallery: [
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550046/IMG-20250822-WA0036_ceunur.jpg",
+        alt: "Travaux de plâtrerie et finitions intérieures terminés"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550421/IMG-20260307-WA0048_mpqln2.jpg",
+        alt: "Finitions de plâtrerie et rénovation intérieure"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775550314/IMG-20250930-WA0067_pnlhoe.jpg",
+        alt: "Détail des finitions de plâtrerie"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775572029/IMG-20260307-WA0328_z3ajrr.jpg",
+        alt: "Détail des travaux de plâtrerie"
+      }
     ],
     features: [
       "Cloisons et doublages",
@@ -85,9 +130,27 @@ const servicesData: Record<string, ServiceDetail> = {
     description: "Améliorez le confort thermique et acoustique de vos bâtiments",
     longDescription: "Améliorez le confort thermique et acoustique de vos bâtiments. Isolation des combles, murs, planchers et toitures (ITI/ITE), traitement des ponts thermiques, pose de pare-vapeur et membranes d'étanchéité à l'air. Matériaux adaptés (laine minérale, fibre de bois, PIR, ouate). Chantier protégé, finitions soignées, économies d'énergie durables.",
     images: [
-      "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800&h=600&fit=crop",
+      "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775571080/IMG-20260307-WA0028_zpdrhb.jpg",
       "https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1625047509168-a7026f3c3d01?w=800&h=600&fit=crop"
+    ],
+    gallery: [
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775568176/renovation-1_tzpnzr.jpg",
+        alt: "Travaux d'isolation avant rénovation"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775572087/IMG-20260307-WA0165_ea2oy7.jpg",
+        alt: "Travaux d'isolation en cours"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775571080/IMG-20260307-WA0028_zpdrhb.jpg",
+        alt: "Finitions d'isolation intérieure"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775549950/20250201_151725_je9amj.jpg",
+        alt: "Rendu final des travaux d'isolation"
+      }
     ],
     features: [
       "Isolation des combles",
@@ -118,6 +181,7 @@ const servicesData: Record<string, ServiceDetail> = {
       "https://images.pexels.com/photos/6990568/pexels-photo-6990568.jpeg",
       "https://images.unsplash.com/photo-1604187351574-c75ca79f5807?w=800&h=600&fit=crop"
     ],
+    hideGallery: true,
     features: [
       "Tri sélectif des déchets",
       "Évacuation des inertes",
@@ -394,6 +458,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     notFound();
   }
 
+  const shouldShowGallery = !service.hideGallery;
+
   return (
     <main className="pt-28">
       {/* Hero Section */}
@@ -432,11 +498,12 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
             </ScrollToButton>
 
-            <ScrollToButton targetSection="gallery" offsetY={-100} secondary>
-              Gallerie
-              {/* <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" /> */}
-
-            </ScrollToButton>
+            {shouldShowGallery ? (
+              <ScrollToButton targetSection="gallery" offsetY={-100} secondary>
+                Gallerie
+                {/* <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" /> */}
+              </ScrollToButton>
+            ) : null}
           </div>
 
         </div>
@@ -554,23 +621,29 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             
           </div>
               {/* Gallery */}
-              <div id="gallery" className=" w-full">
-                <h3 className="text-2xl font-switzer font-semibold mb-6 ">
-                  Galerie
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {service.images.slice(1).map((image, index) => (
-                    <div key={index} className="relative h-64 rounded-lg overflow-hidden">
-                      <Image
-                        src={image}
-                        alt={`${service.title} ${index + 2}`}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-300"
-                      />
+              {shouldShowGallery ? (
+                <div id="gallery" className=" w-full">
+                  <h3 className="text-2xl font-switzer font-semibold mb-6 ">
+                    Galerie
+                  </h3>
+                  {service.gallery ? (
+                    <ProjectGalleryModal images={service.gallery} />
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {service.images.slice(1).map((image, index) => (
+                        <div key={index} className="relative h-64 rounded-lg overflow-hidden">
+                          <Image
+                            src={image}
+                            alt={`${service.title} ${index + 2}`}
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  )}
                 </div>
-              </div>
+              ) : null}
         </div>
       </section>
     </main>

@@ -213,7 +213,7 @@ export default function Nav() {
         <div className="w-full mt-4">
           {/* <h3 className="text-lg font-semibold mb-4 text-gray-800">Nos réalisations</h3> */}
           <div className="grid grid-cols-1 gap-4">
-            {projects.slice(0, 2).map((project, index) => (
+            {projects.slice(0, 2).map((project) => (
               <Link
                 key={project.id}
                 href={`/projets/${project.slug}`}
@@ -225,6 +225,7 @@ export default function Nav() {
                   alt={project.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 p-4 text-white">
