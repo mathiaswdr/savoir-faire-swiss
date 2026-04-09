@@ -115,7 +115,7 @@ export const siteMetadata: Metadata = {
     "business.contact.postal-code": "1470",
     "business.contact.country-name": "Switzerland",
     "business.contact.phone": "+41 76 709 60 11",
-    "business.contact.email": "info@lesavoirfaireswiss.ch",
+    "business.contact.email": "lesavoirfaireswiss@gmail.com",
     
     // Secteur d'activité
     "business.category": "Construction Company",

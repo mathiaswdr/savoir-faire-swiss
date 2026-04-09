@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { ArrowLeft, Calendar, MapPin, Clock, DollarSign } from 'lucide-react';
+import { ArrowLeft, Calendar, MapPin, Clock } from 'lucide-react';
 import { getProjectBySlug, getAllProjectSlugs } from '@/lib/projects-data';
 import ScrollToButton from '@/components/ui/scroll-to-button';
 import { ArrowDown } from 'lucide-react';
@@ -89,7 +89,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section id="infos" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Project Info Cards */}
-          <div className="grid md:grid-cols-4 gap-6 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
             <div className="bg-[#EDF4DB] p-6 rounded-lg text-center">
               <MapPin className="w-8 h-8 mx-auto mb-3 text-[#7D9395]" />
               <h3 className="font-semibold mb-2">Lieu</h3>
@@ -104,11 +104,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <Clock className="w-8 h-8 mx-auto mb-3 text-[#7D9395]" />
               <h3 className="font-semibold mb-2">Durée</h3>
               <p>{project.duration}</p>
-            </div>
-            <div className="bg-[#EDF4DB] p-6 rounded-lg text-center">
-              <DollarSign className="w-8 h-8 mx-auto mb-3 text-[#7D9395]" />
-              <h3 className="font-semibold mb-2">Budget</h3>
-              <p>{project.budget}</p>
             </div>
           </div>
 

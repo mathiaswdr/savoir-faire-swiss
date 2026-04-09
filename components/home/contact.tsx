@@ -148,7 +148,7 @@ export default function Contact() {
           </div>
 
           <div className="pt-4 space-y-2 font-semibold">
-            <p className="text-lg">info@lesavoirfaireswiss.ch</p>
+            <p className="text-lg">lesavoirfaireswiss@gmail.com</p>
           </div>
         </div>
 
