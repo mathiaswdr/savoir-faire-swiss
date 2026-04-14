@@ -7,6 +7,7 @@ export interface Project {
   category: string;
   duration: string;
   budget: string;
+  heroImage?: string;
   beforeImage: string;
   afterImage: string;
   description: string;
@@ -28,15 +29,16 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    slug: "renovation-sol-murs-geneve",
+    slug: "renovation-sol-murs-fribourg",
     title: "Rénovation de sol et murs",
-    location: "Genève",
-    year: 2023,
+    location: "Fribourg",
+    year: 2025,
     category: "Rénovation intérieure",
     duration: "3 mois",
     budget: "25 000 - 35 000 CHF",
-    beforeImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775568176/renovation-1_tzpnzr.jpg",
-    afterImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775549950/20250201_151725_je9amj.jpg",
+    heroImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775549950/20250201_151725_je9amj.jpg",
+    beforeImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776160764/IMG-20260307-WA0036_1_qyto8e.jpg",
+    afterImage: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776160765/IMG-20260307-WA0031_2_d3u0ij.jpg",
     description: "Rénovation intérieure avec reprise complète des sols et des murs pour redonner un aspect propre, durable et soigné à l'espace.",
     challenges: [
       "Préparation des supports avant les finitions",
@@ -50,7 +52,7 @@ export const projects: Project[] = [
       "Remise en état des murs",
       "Finitions propres et adaptées à l'usage quotidien"
     ],
-    works: ["Rénovation", "Sol", "Murs", "Finitions"],
+    works: ["Rénovation", "Sol", "Murs", "Escaliers", "Finitions"],
     gallery: [],
   },
   {
@@ -58,7 +60,7 @@ export const projects: Project[] = [
     slug: "renovation-murs-faux-plafond-led-lausanne",
     title: "Rénovation murs et faux plafond LED",
     location: "Lausanne",
-    year: 2023,
+    year: 2025,
     category: "Rénovation intérieure",
     duration: "2 mois",
     budget: "15 000 - 25 000 CHF",
@@ -85,7 +87,7 @@ export const projects: Project[] = [
     slug: "renovation-plafond-appartement-montreux",
     title: "Rénovation plafond et appartement",
     location: "Montreux",
-    year: 2022,
+    year: 2024,
     category: "Rénovation d'appartement",
     duration: "6 mois",
     budget: "80 000 - 120 000 CHF",
@@ -122,8 +124,8 @@ export const projects: Project[] = [
     id: "4",
     slug: "renovation-complete-plafond-led-vevey",
     title: "Rénovation complète et plafond LED",
-    location: "Vevey",
-    year: 2023,
+    location: "Gstaad",
+    year: 2024,
     category: "Rénovation complète",
     duration: "4 mois",
     budget: "45 000 - 60 000 CHF",

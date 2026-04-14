@@ -8,7 +8,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projectSlugs = getAllProjectSlugs()
 
   // Define service slugs
-  const serviceSlugs = ['peinture', 'platrerie', 'isolation', 'recyclage']
+  const serviceSlugs = [
+    'peinture',
+    'platrerie',
+    'isolation',
+    'recyclage',
+    'carrelage-et-parquets',
+    'fenetres-et-stores-electriques',
+  ]
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [

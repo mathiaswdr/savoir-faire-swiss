@@ -37,7 +37,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       {/* Hero Section */}
       <section className="relative h-[620px] sm:h-[700px] lg:h-[80dvh] w-full">
         <Image
-          src={project.afterImage}
+          src={project.heroImage ?? project.afterImage}
           alt={project.title}
           fill
           className="object-cover"

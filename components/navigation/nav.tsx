@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter, usePathname } from "next/navigation";
-import { Paintbrush, Hammer, Shield, Recycle } from "lucide-react";
+import { Paintbrush, Hammer, Shield, Recycle, Grid3X3, Blinds } from "lucide-react";
 import MobileDropdown from "../ui/mobile-dropdown";
 import Logo from "../logo";
 import { scrollToSection } from "@/utils/tools";
@@ -91,6 +91,18 @@ export default function Nav() {
       href: "/services/recyclage",
       icon: Recycle,
       description: "Tri et évacuation de déchets"
+    },
+    {
+      name: "Carrelage et Parquets",
+      href: "/services/carrelage-et-parquets",
+      icon: Grid3X3,
+      description: "Pose de sols et faïence"
+    },
+    {
+      name: "Fenêtres et stores électriques",
+      href: "/services/fenetres-et-stores-electriques",
+      icon: Blinds,
+      description: "Pose et motorisation"
     }
   ];
 
@@ -225,7 +237,7 @@ export default function Nav() {
                   alt={project.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="100vw"
+                  sizes="calc(100vw - 4rem)"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 p-4 text-white">

@@ -202,6 +202,93 @@ const servicesData: Record<string, ServiceDetail> = {
     crossColor: "#EDF4DB",
     duration: "Selon chantier"
   },
+  "carrelage-et-parquets": {
+    title: "Carrelage et Parquets",
+    description: "Pose soignée de carrelage, faïence et parquets pour rénover durablement vos sols",
+    longDescription: "Nous réalisons la pose de carrelage, faïence et parquets avec une approche complète : préparation des supports, ragréage si nécessaire, calepinage, pose collée ou flottante, finitions périphériques et conseils sur l'entretien. Nous intervenons en rénovation comme en neuf pour les pièces de vie, cuisines, salles de bain et espaces professionnels, avec un rendu propre, durable et aligné à vos usages.",
+    images: [
+      "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775549950/20250201_151725_je9amj.jpg",
+      "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776161682/IMG-20250913-WA0014_s4upcn.jpg",
+      "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776161758/20251106_084026_iviaq7.jpg",
+      "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776161792/20250314_164027_ohqcay.jpg"
+    ],
+    gallery: [
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1775549950/20250201_151725_je9amj.jpg",
+        alt: "Carrelage et parquets - vue d'ensemble du chantier terminé"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776161682/IMG-20250913-WA0014_s4upcn.jpg",
+        alt: "Pose de carrelage et finitions intérieures"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776161758/20251106_084026_iviaq7.jpg",
+        alt: "Détail des finitions de parquet"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776161792/20250314_164027_ohqcay.jpg",
+        alt: "Rendu final carrelage et parquets"
+      }
+    ],
+    features: [
+      "Pose de carrelage sol et mur",
+      "Faïence pour cuisines et salles de bain",
+      "Pose de parquets massifs, contrecollés et stratifiés",
+      "Préparation des supports et ragréage",
+      "Joints, plinthes et finitions périphériques",
+      "Conseils sur les matériaux et l'entretien"
+    ],
+    process: [
+      "Visite technique et prise de mesures",
+      "Préparation et mise à niveau des supports",
+      "Calepinage et validation des finitions",
+      "Pose du carrelage ou du parquet",
+      "Jointoiement, plinthes et ajustements",
+      "Nettoyage final et réception du chantier"
+    ],
+    mainColor: "#7D9395",
+    crossColor: "#EDF4DB",
+    duration: "3 jours à 2 semaines"
+  },
+  "fenetres-et-stores-electriques": {
+    title: "Fenêtres et stores électriques",
+    description: "Installation et remplacement de fenêtres, stores et motorisations pour plus de confort au quotidien",
+    longDescription: "Nous prenons en charge la pose ou le remplacement de fenêtres ainsi que l'installation de stores électriques et de leurs motorisations. Dépose de l'existant, réglages, finitions, raccordements et mise en service : chaque intervention est pensée pour améliorer l'isolation, la sécurité et le confort d'usage. Nous adaptons les solutions aux contraintes du bâtiment et assurons une finition propre en intérieur comme en extérieur.",
+    images: [
+      "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776162259/20260317_105835_rpzgii.jpg",
+      "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776162262/20260323_084710_kb2pbv.jpg",
+      "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776162317/20260317_105924_uqgnc5.jpg"
+    ],
+    gallery: [
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776162262/20260323_084710_kb2pbv.jpg",
+        alt: "Fenêtres et stores électriques - installation terminée"
+      },
+      {
+        url: "https://res.cloudinary.com/dgznmx5v2/image/upload/v1776162317/20260317_105924_uqgnc5.jpg",
+        alt: "Détail de la pose de fenêtres et stores électriques"
+      }
+    ],
+    features: [
+      "Pose et remplacement de fenêtres",
+      "Réglage des ouvrants et quincailleries",
+      "Installation de stores électriques",
+      "Motorisation et commandes murales ou télécommandées",
+      "Raccordements et mise en service",
+      "Finitions soignées et conseils d'utilisation"
+    ],
+    process: [
+      "Analyse du besoin et prise de cotes",
+      "Dépose et préparation des supports",
+      "Pose des menuiseries ou stores",
+      "Raccordements électriques et réglages",
+      "Tests de fonctionnement et sécurités",
+      "Finitions et remise en main au client"
+    ],
+    mainColor: "#B8D8D8",
+    crossColor: "#EC6B60",
+    duration: "2 jours à 2 semaines"
+  },
   "maconnerie": {
     title: "Maçonnerie",
     description: "Travaux de gros œuvre : murs porteurs, cloisons, dalles et fondations",
