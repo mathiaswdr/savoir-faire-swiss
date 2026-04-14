@@ -33,7 +33,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const hasTestimonial = testimonial !== undefined;
 
   return (
-    <main className="min-h-screen bg-white pt-32">
+    <main className="min-h-screen bg-white pt-28">
       {/* Hero Section */}
       <section className="relative h-[620px] sm:h-[700px] lg:h-[80dvh] w-full">
         <Image
