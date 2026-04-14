@@ -93,7 +93,7 @@ export default function HeroSection() {
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto lg:mx-0 opacity-90 ">
-              Votre partenaire de confiance pour tous vos projets de construction
+              Votre partenaire de confiance pour tous vos projets de construction et rénovation
             </p>
 
             {/* CTA Buttons */}
