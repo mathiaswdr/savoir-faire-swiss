@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
     // Envoyer l'email
     const data = await resend.emails.send({
       from: 'Savoir Faire Swiss <info@lesavoirfaireswiss.ch>',
-      to: ['mwrdev.infos@gmail.com'],
+      to: ['lesavoirfaireswiss@gmail.com', 'mwrdev.infos@gmail.com'],
       replyTo: email,
       subject: `Nouveau message de contact - ${name}`,
       html: `
