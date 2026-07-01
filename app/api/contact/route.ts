@@ -27,8 +27,9 @@ export async function POST(request: NextRequest) {
 
     // Envoyer l'email
     const data = await resend.emails.send({
-      from: 'Contact Savoir Faire Swiss <lesavoirfaireswiss@gmail.com>', // Remplacez par votre domaine vérifié
-      to: ['lesavoirfaireswiss@gmail.com'], // Remplacez par votre adresse Gmail
+      from: 'Savoir Faire Swiss <info@lesavoirfaireswiss.ch>',
+      to: ['mwrdev.infos@gmail.com'],
+      replyTo: email,
       subject: `Nouveau message de contact - ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
